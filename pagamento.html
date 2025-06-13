@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pagamento - SPA Regina Vidal</title>
+  <link rel="icon" href="IMG/LOGO.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!--ESTILIZAÇÃO DO TOPO DO SITE/////MENU(TITULO PRINCIPAL E ICONES)-->
+  <header>
+    <div class="divHeader">
+      <img src="IMG/LOGO (2).png" class="logo" title="Meu site" /> <!--ADICIONA O LOGO-->
+
+      <h1 class="nomeEmpresa">SPA Regina Vidal</h1> <!--ADICIONA A ESCRITA DO NOME DA EMPRESA-->
+
+      <div class="icones-header">
+        <div class="pessoa" onclick="window.location.href='cadastro.html'"> <!--COLOCAR UM HREF NO ICONE DE PESSOA-->
+          <img src="IMG/iconePessoa.png" class="icone_pessoa" /> <!--IMPORTANDO A IMAGEM DO ICONE DE PESSOA-->
+        </div>
+        <div class="sacola" onclick="window.location.href='pagamento.html'">
+          <!--COLOCAR UM HREF NO ICONE DE SACOLA QUE LEVA A PESSOA PARA O PAGAMENTO-->
+          <img src="IMG/sacola.png" class="icone_sacola" /> <!--IMPORTANDO A IMAGEM DO ICONE DE PESSOA-->
+          <span id="contador-sacola" class="contador-sacola">0</span>
+          <!--CONFIGURAÇÃO PARA A CONTAGEM DE PRODUTOS NA SACOLA-->
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!--CONFIGURA O MENU DA PAGINA////INICIO|PROCEDIMENTO|AGENDAMENTO|PRODUTOS-->
+  <!--CONFIGURA O MENU DA PAGINA////INICIO|PROCEDIMENTO|AGENDAMENTO|PRODUTOS-->
+  <nav class="menu">
+    <ul class="lista_menu">
+      <li class="item-menu">
+        <a href="meusite.html">Início</a> <!--TITULO DA PRIMEIRA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="#sobre-nos">Sobre Nós</a> <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (INICIO)-->
+          <a href="#estabelecimentoo">Nosso Estabelecimento</a>
+          <a href="#procedimentoo">Procedimentos</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="procedimento.html">Procedimentos</a> <!--TITULO DA SEGUNDA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="procedimentoFaciais.html">Facial</a>
+          <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PROCEDIMENTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR-->
+          <a href="procedimentoCorporais.html">Corporal</a>
+          <a href="procedimentoLaser.html">Laser</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="produtos.html">Produtos</a><!--TITULO DA TERCEIRA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="produtosCorporais.html">Corporal</a>
+          <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PRODUTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR-->
+          <a href="produtosFacial.html">Facial</a>
+          <a href="produtosPromoção.html">Promoção</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="agendamento.html">Agendamento</a> <!--TITULO DA QUARTA OPÇÃO MENU-->
+        <div class="submenu">
+          <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PRODUTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR-->
+
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <main>
+
+    <main class="pagamento">
+      <h2 class="titulo_pagamento">Resumo da Sacola</h2>
+      <ul id="lista-produtos" class="lista_pagamento"></ul>
+      <p id="total" class="pagamento__total"></p>
+      <button class="pagamento__botao" onclick="finalizarCompra()">Finalizar Compra</button>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const lista = document.getElementById("lista-produtos");
+        const total = document.getElementById("total");
+        const sacola = JSON.parse(localStorage.getItem("sacola")) || [];
+
+        if (sacola.length === 0) {
+          lista.innerHTML = "<li>Sua sacola está vazia.</li>";
+          total.textContent = "";
+          return;
+        }
+
+        let valorTotal = 0;
+        sacola.forEach((item, index) => {
+          let preco = 0;
+          // Produtos originais
+          if (item === "Protetor Solar Aqua Fluid") preco = 149;
+          else if (item === "Gel de Limpeza Neutro") preco = 169;
+          else if (item === "Loção Hidratante Cerave") preco = 169;
+          else if (item === "Derma Complex Sabonete Iluminador com Vitamina C - 240ml") preco = 179;
+          else if (item === "Hyalu 6 Aqua Face e Olhos - 17g") preco = 269;
+          else if (item === "GEL DE LIMPEZA GL-02 - 350G") preco = 49.00;
+          else if (item === "Gel de Limpeza Facial CeraVe Pele Oleosa - 454g") preco = 81.00;
+          else if (item === "Emulsão de limpeza - 200g") preco = 60.00;
+          else if (item === "Sallve Tônico Renovador - 120ml") preco = 42.00;
+          else if (item === "Tônico Glico Renovador - 120ml") preco = 150.00;
+          else if (item === "Ácido Lático - Tônico - 120ml") preco = 50.00;
+          else if (item === "Tônico antiacne esfoliante - Ácido Salicílico - 90ml") preco = 80.00;
+          else if (item === "Sérum Facial de Retinol e Niacinamida - 30ml") preco = 66.00;
+          else if (item === "Sérum antioxidante - Vitamina C - 30g") preco = 100.00;
+          else if (item === "Sérum Ácido Hialurônico - 30ml") preco = 54.00;
+          else if (item === "Gel-creme hidratante calmante - Calming Cream - 40g") preco = 50.00;
+          else if (item === "Gel Hidratante GH-01 - 50g") preco = 55.00;
+          else if (item === "Gel Hidratante Facial - 50g") preco = 50.00;
+          else if (item === "Protetor Solar PS-01 FPS 60 - 40 ml") preco = 44.00;
+          else if (item === "Protetor Solar FPS 60 Watery Lotion - 50ml") preco = 60.00;
+          else if (item === "Stick Multifuncional Proteção Solar Com Cor - 18g") preco = 120.00;
+          else if (item === "Esfoliante Facial com Extrato de Bambu - 100ml") preco = 42.00;
+          else if (item === "Gel de Limpeza Esfoliante Facial - 50ml") preco = 28.00;
+          else if (item === "Balm Labial Intense Cuide-se Bem Framboesa - 6,2g") preco = 38.00;
+          else if (item === "Máscara Labial Noturna Lip Repair Eudora Niina Skin - 9g") preco = 20.00;
+          else if (item === "Máscara Facial Noturna com Melancia - 35ml") preco = 20.00;
+          else if (item === "Nivea – Loção Firmadora Q10 + Vitamina C") preco = 33.90;
+          else if (item === "Neutrogena – Body Care Intensive") preco = 42.90;
+          else if (item === "CeraVe – Loção Hidratante") preco = 79.90;
+          else if (item === "Bepantol Derma – Loção Corporal") preco = 62.90;
+          else if (item === "La Roche-Posay – Lipikar Baume") preco = 116.90;
+          else if (item === "Vichy – Ideal Body Serum-Milk") preco = 99.90;
+          else if (item === "Aveeno – Daily Moisturizing Lotion") preco = 57.90;
+          else if (item === "Eucerin – pH5 Loção Hidratante") preco = 72.90;
+          else if (item === "Bioderma – Atoderm Crème") preco = 76.90;
+          else if (item === "The Body Shop – Body Butter") preco = 80.90;
+          else if (item === "Natura Ekos – Esfoliante Corporal de Castanha") preco = 61.90;
+          else if (item === "Bio-Oil – Óleo Corporal para Estrias e Cicatrizes") preco = 63.90;
+          else if (item === "Dove – Sabonete Líquido Deeply Nourishing") preco = 21.90;
+          else if (item === "Granado – Sabonetes Glicerinados Terrapeutics") preco = 38.90;
+          else if (item === "L'Occitane – Sabonete Líquido de Amêndoas") preco = 124.90;
+          else if (item === "Natura Tododia – Sabonete Esfoliante ou Cremoso") preco = 35.90;
+          else if (item === "Palmolive – Naturals Óleo Nutritivo") preco = 16.90;
+          else if (item === "O Boticário – Cuide-se Bem Rosa & Algodão") preco = 29.90;
+          else if (item === "Johnson’s – Vita-Rich Rosas ou Romã") preco = 19.90;
+          else if (item === "Simple Organic – Sabonete em barra vegano") preco = 33.90;
+          else if (item === "Océane Sérum Facial Ácido Hialurônico - 30ml") preco = 63.90;
+          else if (item === "Océane Sérum de Niacinamida + Zinco - 30ml") preco = 58.65;
+          else if (item === "Océane Tônico Facial BHA Ácido Salicílico - 150ml") preco = 49.50;
+          else if (item === "Océane Máscara de Argila Rosa - 60g") preco = 37.42;
+          else if (item === "Océane Gua Sha Facial Quartzo Rosa") preco = 72.98;
+          else if (item === "Principia Sérum Vitamina C 10% + Ácido Ferúlico - 30ml") preco = 100.62;
+          else if (item === "Principia Sérum Niacinamida 10% - 30ml") preco = 61.50;
+          else if (item === "Principia Sérum Retinol Puro 0.3% - 30ml") preco = 78.40;
+          else if (item === "Principia Hidratante Facial H1 (com esqualano e glicerina) - 50ml") preco = 58.32;
+          else if (item === "Creamy Sérum de Ácido Mandélico - 30ml") preco = 80.75;
+          else if (item === "Creamy Sérum de Ácido Lático - 30ml") preco = 75.44;
+          else if (item === "Creamy Gel com Ácido Salicílico - 30ml") preco = 68.00;
+          else if (item === "Creamy Cleanser Espuma de Limpeza - 150ml") preco = 49.80;
+          else if (item === "Sallve Antioxidante Hidratante - 50ml") preco = 96.60;
+          else if (item === "Sallve Esfoliante Enzimático - 75ml") preco = 63.96;
+          else if (item === "Sallve Gel de Limpeza Facial - 150ml") preco = 61.60;
+          else if (item === "Sallve Tônico Renovador - 100ml") preco = 68.00;
+          else if (item === "Sallve Sérum Uniformizador - 30ml") preco = 89.10;
+          else if (item === "La Roche-Posay Effaclar Duo+ - 40ml") preco = 88.00;
+          else if (item === "La Roche-Posay Effaclar Gel Concentrado - 200ml") preco = 73.80;
+          else if (item === "La Roche-Posay Hyalu B5 Sérum - 30ml") preco = 140.40;
+          else if (item === "La Roche-Posay Anthelios Fluido Invisível - 60ml") preco = 80.75;
+          else if (item === "La Roche-Posay Cicaplast Baume B5 - 40ml") preco = 62.25;
+          else if (item === "Skinceuticals CE Ferulic - 30ml") preco = 252.80;
+          else if (item === "Skinceuticals Blemish + Age Defense - 30ml") preco = 226.80;
+          else if (item === "Skinceuticals Silymarin CF - 30ml") preco = 224.10;
+          else if (item === "Skinceuticals Hydrating B5 Gel - 30ml") preco = 184.00;
+
+          valorTotal += preco;
+
+          const li = document.createElement("li");
+          li.className = "pagamento__item";
+          li.innerHTML = `
+        <span>${item} - R$ ${preco.toFixed(2).replace('.', ',')}</span>
+        <button class="pagamento__remover" data-index="${index}">✕</button>
+      `;
+          lista.appendChild(li);
+        });
+
+        total.textContent = `Total: R$ ${valorTotal.toFixed(2).replace('.', ',')}`;
+
+        lista.addEventListener("click", (e) => {
+          if (e.target.classList.contains("pagamento__remover")) {
+            const index = e.target.dataset.index;
+            sacola.splice(index, 1);
+            localStorage.setItem("sacola", JSON.stringify(sacola));
+            location.reload();
+          }
+        });
+      });
+
+      function finalizarCompra() {
+        const sacola = JSON.parse(localStorage.getItem("sacola")) || [];
+        let valorTotal = 0;
+
+        // Calcula o total novamente para garantir que está correto
+        sacola.forEach(item => {
+          // Produtos originais
+          if (item === "Derma Complex Sabonete Iluminador com Vitamina C - 240ml") valorTotal += 179;
+          else if (item === "Hyalu 6 Aqua Face e Olhos - 17g") valorTotal += 269;
+          else if (item === "GEL DE LIMPEZA GL-02 - 350G") valorTotal += 49.00;
+          else if (item === "Gel de Limpeza Facial CeraVe Pele Oleosa - 454g") valorTotal += 81.00;
+          else if (item === "Emulsão de limpeza - 200g") valorTotal += 60.00;
+          else if (item === "Sallve Tônico Renovador - 120ml") valorTotal += 42.00;
+          else if (item === "Tônico Glico Renovador - 120ml") valorTotal += 150.00;
+          else if (item === "Ácido Lático - Tônico - 120ml") valorTotal += 50.00;
+          else if (item === "Tônico antiacne esfoliante - Ácido Salicílico - 90ml") valorTotal += 80.00;
+          else if (item === "Sérum Facial de Retinol e Niacinamida - 30ml") valorTotal += 66.00;
+          else if (item === "Sérum antioxidante - Vitamina C - 30g") valorTotal += 100.00;
+          else if (item === "Sérum Ácido Hialurônico - 30ml") valorTotal += 54.00;
+          else if (item === "Gel-creme hidratante calmante - Calming Cream - 40g") valorTotal += 50.00;
+          else if (item === "Gel Hidratante GH-01 - 50g") valorTotal += 55.00;
+          else if (item === "Gel Hidratante Facial - 50g") valorTotal += 50.00;
+          else if (item === "Protetor Solar PS-01 FPS 60 - 40 ml") valorTotal += 44.00;
+          else if (item === "Protetor Solar FPS 60 Watery Lotion - 50ml") valorTotal += 60.00;
+          else if (item === "Stick Multifuncional Proteção Solar Com Cor - 18g") valorTotal += 120.00;
+          else if (item === "Esfoliante Facial com Extrato de Bambu - 100ml") valorTotal += 42.00;
+          else if (item === "Gel de Limpeza Esfoliante Facial - 50ml") valorTotal += 28.00;
+          else if (item === "Balm Labial Intense Cuide-se Bem Framboesa - 6,2g") valorTotal += 38.00;
+          else if (item === "Máscara Labial Noturna Lip Repair Eudora Niina Skin - 9g") valorTotal += 20.00;
+          else if (item === "Máscara Facial Noturna com Melancia - 35ml") valorTotal += 20.00;
+          else if (item === "Nivea – Loção Firmadora Q10 + Vitamina C") valorTotal += 33.90;
+          else if (item === "Neutrogena – Body Care Intensive") valorTotal += 42.90;
+          else if (item === "CeraVe – Loção Hidratante") valorTotal += 79.90;
+          else if (item === "Bepantol Derma – Loção Corporal") valorTotal += 62.90;
+          else if (item === "La Roche-Posay – Lipikar Baume") valorTotal += 116.90;
+          else if (item === "Vichy – Ideal Body Serum-Milk") valorTotal += 99.90;
+          else if (item === "Aveeno – Daily Moisturizing Lotion") valorTotal += 57.90;
+          else if (item === "Eucerin – pH5 Loção Hidratante") valorTotal += 72.90;
+          else if (item === "Bioderma – Atoderm Crème") valorTotal += 76.90;
+          else if (item === "The Body Shop – Body Butter") valorTotal += 80.90;
+          else if (item === "Natura Ekos – Esfoliante Corporal de Castanha") valorTotal += 61.90;
+          else if (item === "Bio-Oil – Óleo Corporal para Estrias e Cicatrizes") valorTotal += 63.90;
+          else if (item === "The Body Shop – Esfoliante de Moringa Karité") valorTotal += 98.90;
+          else if (item === "Dove – Sabonete Líquido Deeply Nourishing") valorTotal += 21.90;
+          else if (item === "Granado – Sabonetes Glicerinados Terrapeutics") valorTotal += 38.90;
+          else if (item === "L'Occitane – Sabonete Líquido de Amêndoas") valorTotal += 124.90;
+          else if (item === "Natura Tododia – Sabonete Esfoliante ou Cremoso") valorTotal += 35.90;
+          else if (item === "Palmolive – Naturals Óleo Nutritivo") valorTotal += 16.90;
+          else if (item === "O Boticário – Cuide-se Bem Rosa & Algodão") valorTotal += 29.90;
+          else if (item === "Johnson’s – Vita-Rich Rosas ou Romã") valorTotal += 19.90;
+          else if (item === "Simple Organic – Sabonete em barra vegano") valorTotal += 33.90;
+          else if (item === "Océane Sérum Facial Ácido Hialurônico - 30ml") valorTotal += 63.90;
+          else if (item === "Océane Sérum de Niacinamida + Zinco - 30ml") valorTotal += 58.65;
+          else if (item === "Océane Tônico Facial BHA Ácido Salicílico - 150ml") valorTotal += 49.50;
+          else if (item === "Océane Máscara de Argila Rosa - 60g") valorTotal += 37.42;
+          else if (item === "Océane Gua Sha Facial Quartzo Rosa") valorTotal += 72.98;
+          else if (item === "Principia Sérum Vitamina C 10% + Ácido Ferúlico - 30ml") valorTotal += 100.62;
+          else if (item === "Principia Sérum Niacinamida 10% - 30ml") valorTotal += 61.50;
+          else if (item === "Principia Sérum Retinol Puro 0.3% - 30ml") valorTotal += 78.40;
+          else if (item === "Principia Hidratante Facial H1 (com esqualano e glicerina) - 50ml") valorTotal += 58.32;
+          else if (item === "Creamy Sérum de Ácido Mandélico - 30ml") valorTotal += 80.75;
+          else if (item === "Creamy Sérum de Ácido Lático - 30ml") valorTotal += 75.44;
+          else if (item === "Creamy Gel com Ácido Salicílico - 30ml") valorTotal += 68.00;
+          else if (item === "Creamy Cleanser Espuma de Limpeza - 150ml") valorTotal += 49.80;
+          else if (item === "Sallve Antioxidante Hidratante - 50ml") valorTotal += 96.60;
+          else if (item === "Sallve Esfoliante Enzimático - 75ml") valorTotal += 63.96;
+          else if (item === "Sallve Gel de Limpeza Facial - 150ml") valorTotal += 61.60;
+          else if (item === "Sallve Tônico Renovador - 100ml") valorTotal += 68.00;
+          else if (item === "Sallve Sérum Uniformizador - 30ml") valorTotal += 89.10;
+          else if (item === "La Roche-Posay Effaclar Duo+ - 40ml") valorTotal += 88.00;
+          else if (item === "La Roche-Posay Effaclar Gel Concentrado - 200ml") valorTotal += 73.80;
+          else if (item === "La Roche-Posay Hyalu B5 Sérum - 30ml") valorTotal += 140.40;
+          else if (item === "La Roche-Posay Anthelios Fluido Invisível - 60ml") valorTotal += 80.75;
+          else if (item === "La Roche-Posay Cicaplast Baume B5 - 40ml") valorTotal += 62.25;
+          else if (item === "Skinceuticals CE Ferulic - 30ml") valorTotal += 252.80;
+          else if (item === "Skinceuticals Blemish + Age Defense - 30ml") valorTotal += 226.80;
+          else if (item === "Skinceuticals Silymarin CF - 30ml") valorTotal += 224.10;
+          else if (item === "Skinceuticals Hydrating B5 Gel - 30ml") valorTotal += 184.00;
+        });
+
+        // Passa o total como parâmetro na URL
+        window.location.href = "PagamentoFinal.html?total=" + valorTotal.toFixed(2);
+      }
+    </script>
+
+</body>
+
+</html>

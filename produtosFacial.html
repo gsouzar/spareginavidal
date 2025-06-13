@@ -1,0 +1,621 @@
+ 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Procedimentos - SPA Regina Vidal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="IMG/LOGO.png">
+</head>
+<body>
+   <!--ESTILIZAÇÃO DO TOPO DO SITE/////MENU(TITULO PRINCIPAL E ICONES)-->
+   <header>
+    <div class="divHeader">
+      <img src="IMG/LOGO (2).png" class="logo" title="Meu site" /> <!--ADICIONA O LOGO-->
+      
+      <h1 class="nomeEmpresa">SPA Regina Vidal</h1> <!--ADICIONA A ESCRITA DO NOME DA EMPRESA-->
+      
+      <div class="icones-header">
+        <div class="pessoa" onclick="window.location.href='cadastro.html'">  <!--COLOCAR UM HREF NO ICONE DE PESSOA-->
+          <img src="IMG/iconePessoa.png" class="icone_pessoa" /> <!--IMPORTANDO A IMAGEM DO ICONE DE PESSOA-->
+        </div>
+        <div class="sacola" onclick="window.location.href='pagamento.html'"> <!--COLOCAR UM HREF NO ICONE DE SACOLA QUE LEVA A PESSOA PARA O PAGAMENTO-->
+          <img src="IMG/sacola.png" class="icone_sacola" /> <!--IMPORTANDO A IMAGEM DO ICONE DE PESSOA-->
+          <span id="contador-sacola" class="contador-sacola">0</span> <!--CONFIGURAÇÃO PARA A CONTAGEM DE PRODUTOS NA SACOLA-->
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!--CONFIGURA O MENU DA PAGINA////INICIO|PROCEDIMENTO|AGENDAMENTO|PRODUTOS-->
+    <!--CONFIGURA O MENU DA PAGINA////INICIO|PROCEDIMENTO|AGENDAMENTO|PRODUTOS-->
+  <nav class="menu">
+    <ul class="lista_menu">
+      <li class="item-menu">
+        <a href="meusite.html">Início</a>  <!--TITULO DA PRIMEIRA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="#sobre-nos">Sobre Nós</a>  <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (INICIO)-->
+          <a href="#estabelecimentoo">Nosso Estabelecimento</a>
+          <a href="#procedimentoo">Procedimentos</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="procedimento.html">Procedimentos</a> <!--TITULO DA SEGUNDA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="procedimentoFaciais.html">Facial</a> <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PROCEDIMENTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          <a href="procedimentoCorporais.html">Corporal</a>
+          <a href="procedimentoLaser.html">Laser</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="produtos.html">Produtos</a><!--TITULO DA TERCEIRA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="produtosCorporais.html">Corporal</a> <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PRODUTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          <a href="produtosFacial.html">Facial</a> 
+          <a href="produtosPromoção.html">Promoção</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="agendamento.html">Agendamento</a>  <!--TITULO DA QUARTA OPÇÃO MENU-->
+        <div class="submenu">
+   <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PRODUTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          
+        </div>
+      </li>
+    </ul>
+  </nav>
+ 
+ <div class="container">
+    <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="IMG/vitaminC.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/vitaminaC2.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Derma Complex Sabonete Iluminador com Vitamina C - 240ml</h2>
+      <p class="texto_Card">Sabonete Iluminador com Vitamina C que limpa sem agredir a pele, tem ação iluminadora imediata, refresca e tem ação antioxidante, hidratante, revitalizante e antipoluição</p> 
+      <div class="preco">
+      <span class="preco-promocional">R$ 179,00</span>
+</div>
+      <button class="botao-sacola" onclick="adicionarProduto('Derma Complex Sabonete Iluminador com Vitamina C - 240ml')">Adicionar à sacola</button>
+    </div>
+    <div class="card">
+        <!-- Área do carrossel de imagens -->
+        <div class="slider">
+          <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+          <img src="IMG/auqaolhos.png" class="slide active"> <!-- imagem inicial visível -->
+          <img src="img/vitaminaC2.png" class="slide">       <!-- imagens ocultas -->
+          
+    
+          <!-- Botões de navegação -->
+          <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+          <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+        </div>
+  
+    
+        <!-- Informações do produto -->
+        <h2 class ="titulo_Card">Hyalu 6 Aqua Face e Olhos - 17g</h2>
+        <p class="texto_Card">O 1° Ácido Hialurônico com textura Water Stick que preenche rugas, promove frescor imediato e hidrata profundamente a qualquer hora e em qualquer lugar</p> 
+        <span class="preco"><b>R$ 269,00</b></span>
+        <button class="botao-sacola" onclick="adicionarProduto('Hyalu 6 Aqua Face e Olhos - 17g')">Adicionar à sacola</button> <!--BOTAO QUE ADICIONA O GEL DE LIMPEZA NA CESTA -->
+      </div>
+
+      <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/gel_limpeza_pricipia1.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/gel_limpeza_pricipia.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">GEL DE LIMPEZA GL-02 - 350G</h2>
+      <p class="texto_Card">Gel de limpeza com 11,5% de mix de tensoativos, 10% de glicerina e 1% de PCA sódio, com alta eficácia na melhora da oleosidade, poros dilatados e viço da pele. Indicado para peles sensíveis</p> 
+      <span class="preco"><b>R$ 49,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('GEL DE LIMPEZA GL-02 - 350G')">Adicionar à sacola</button>
+    </div>
+      <div class="card">
+      <!-- Área do carrossel de imagens -->
+        <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/gel_limpeza_cerave.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/gel_limpeza_cerave2.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Gel de Limpeza Facial CeraVe Pele Oleosa - 454g</h2>
+      <p class="texto_Card">Cuida e trata de peles normais a oleosas, retira excesso de maquiagem e sujeira, sem perfume, retém umidade e mantém a pele hidratada, ajuda a proteger e restaurar a barreira protetora do rosto</p> 
+      <span class="preco"><b>R$ 81,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Gel de Limpeza Facial CeraVe Pele Oleosa - 454g')">Adicionar à sacola</button>
+    </div>
+      <div class="card">
+      <!-- Área do carrossel de imagens -->
+       <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/emulsao_creamy.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/emulsao_creamy2.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Emulsão de limpeza - 200g</h2>
+      <p class="texto_Card">Emulsão de limpeza desenvolvida para peles normais a secas, inclusive as mais sensíveis. Sua fórmula sem sulfatos promove uma eficiente limpeza através de surfactantes suaves e ingredientes hidratantes</p> 
+      <span class="preco"><b>R$ 60,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Emulsão de limpeza - 200g')">Adicionar à sacola</button>
+    </div>
+      <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/tonico_sallve.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/tonico_sallve2.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Sallve Tônico Renovador - 120ml</h2>
+      <p class="texto_Card">Tônico com tratamento adstringente com os ácidos glicólico, lático e málico, com alto poder de renovação da pele, renova diariamente a pele, esfoliando sem ressecar</p> 
+      <span class="preco"><b>R$ 42,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Sallve Tônico Renovador - 120ml')">Adicionar à sacola</button>
+    </div>
+      <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/tonico_adcos.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/tonico_adcos2.png" class="slide">       <!-- imagens ocultas -->
+        
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Tônico Glico Renovador - 120ml</h2>
+      <p class="texto_Card">O Tônico Glico Renovador é o primeiro tônico de uso diário com Ácido Glicólico e Niacinamida que renovam a pele e diminui as imperfeições. Possui expressiva ação na renovação celular</p> 
+      <span class="preco"><b>R$ 150,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Tônico Glico Renovador - 120ml')">Adicionar à sacola</button>
+    </div>
+    <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/tonico_principia.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/tonico_principia2.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Ácido Lático - Tônico - 120ml</h2>
+      <p class="texto_Card">Tônico com 7% de Ácido Lático e 1% de Ácido Salicílico com alta eficácia contra acnes, oleosidade e textura irregular da pele</p> 
+      <span class="preco"><b>R$ 50,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Ácido Lático - Tônico - 120ml')">Adicionar à sacola</button>
+    </div>
+    <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/tonico_creamy.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/tonico_creamy2.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Tônico antiacne esfoliante - Ácido Salicílico - 90ml</h2>
+      <p class="texto_Card">A solução tônica antiacne da Creamy traz o ácido salicílico a 2% numa textura líquida para ser usada logo após a limpeza da pele. Pode ser aplicada sozinha ou em combinação com outros tratamentos</p> 
+      <span class="preco"><b>R$ 80,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Tônico antiacne esfoliante - Ácido Salicílico - 90ml')">Adicionar à sacola</button>
+    </div>
+      <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/serum_oceane1.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/serum_oceane.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Sérum Facial de Retinol e Niacinamida - Retinol + Niacinamide Serum - 30 Ml</h2>
+      <p class="texto_Card">O Sérum Facial de Retinol e Niacinamida é o aliado perfeito para uma pele mais hidratada e uniforme. Previne e trata linhas finas, hidrata, estimula a renovação celular e a produção de colágeno, além de controlar a oleosidade</p> 
+      <span class="preco"><b>R$ 66,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Sérum Facial de Retinol e Niacinamida - 30ml')">Adicionar à sacola</button>
+    </div>
+      <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/serum_creamy1.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/serum_creamy2.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Sérum antioxidante - Vitamina C - 30g</h2>
+      <p class="texto_Card">O sérum antioxidante da Creamy tem 10% de vitamina C. A Ethyl-Vitamina-C e a Vitamina C Glicosilada foram combinadas para entregar alto poder antioxidante, clareador e anti-aging, prevenindo e melhorando sinais da idade como rugas finas e diferenças de pigmentação</p> 
+      <span class="preco"><b>R$ 100,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Sérum antioxidante - Vitamina C - 30g')">Adicionar à sacola</button>
+    </div>
+     <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/serum_principia.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/serum_principia2.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Sérum Ácido Hialurônico - 30ml</h2>
+      <p class="texto_Card">Sérum com 2% de complexo com 4 tipos de ácidos hialurônicos e 1% de vit. B5 para uma pele com maior hidratação, firmeza e viço</p> 
+      <span class="preco"><b>R$ 54,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Sérum Ácido Hialurônico - 30ml')">Adicionar à sacola</button>
+    </div>
+     <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/hidrante_creamy.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/hidrante_creamy2.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Gel-creme hidratante calmante - Calming Cream - 40g</h2>
+      <p class="texto_Card">O Calming Cream é um hidratante ultraleve de rápida absorção. Oferece alívio para a pele sensível ou sensibilizada por fatores externos, como uso de ácidos e demaquilantes. Recompõe a barreira cutânea, oferecendo uma hidratação natural e não oleosa</p> 
+      <span class="preco"><b>R$ 50,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Gel-creme hidratante calmante - Calming Cream - 40g')">Adicionar à sacola</button>
+    </div>
+     <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/gel_hidratente_principia.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/gel_hidratente_principia1.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Gel Hidratante GH-01 - 50g</h2>
+      <p class="texto_Card">Gel hidratante com 1% de ácidos hialurônicos e 5% de glicerina com alta eficácia na melhora de linhas finas, firmeza, elasticidade, viço e hidratação da pele</p> 
+      <span class="preco"><b>R$ 55,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Gel Hidratante GH-01 - 50g')">Adicionar à sacola</button>
+    </div>
+      <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/gel_hidratante_oceane.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/gel_hidratante_oceane1.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Gel Hidratante Facial com Extrato de Pérola - Facial Gel Cream - 50g</h2>
+      <p class="texto_Card">O Gel Hidratante Facial é formulado com ácido hialurônico, extrato de pérola, niacinamida e mel, possui textura em gel de rápida absorção. Também refresca e deixa a pele revitalizada e macia. Indicado para todos os tipos de pele</p> 
+      <span class="preco"><b>R$ 50,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Gel Hidratante Facial - 50g')">Adicionar à sacola</button>
+    </div>
+      <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/protetor_solar_principia.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/protetor_solar_principia1.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Protetor Solar PS-01 FPS 60 - 40 ml</h2>
+      <p class="texto_Card">Protetor solar fluido antioleosidade com 16,5% de filtros UV e 5% de niacinamida, FPS 60, toque seco e eficácia contra raios UVA e UVB</p> 
+      <span class="preco"><b>R$ 44,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Protetor Solar PS-01 FPS 60 - 40 ml')">Adicionar à sacola</button>
+    </div>
+      <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/protetor_solar_creamy.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/protetor_solar_creamy1.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Protetor Solar FPS 60 Watery Lotion - 50ml</h2>
+      <p class="texto_Card">O Creamy Watery Lotion é um filtro solar aquoso de toque seco e rápida absorção, ideal para todos os tipos de pele, especialmente as oleosas. Oferece alta proteção (FPS 60) com Fator de Proteção UVA (PPD) 25, proteção contra a luz azul e a luz visível, efeito matte e controle de oleosidade</p> 
+      <span class="preco"><b>R$ 60,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Protetor Solar FPS 60 Watery Lotion - 50ml')">Adicionar à sacola</button>
+    </div>
+      <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/protetor_solar.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/protetor_solar2.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Stick Multifuncional Proteção Solar Com Cor - 18g</h2>
+      <p class="texto_Card">O Stick Multifuncional com cor da Creamy possui FPS 85 e FPUVA 29. Tem ação antioxidante, que promove a redução dos radicais livres, protegendo a sua pele contra o envelhecimento precoce</p> 
+      <span class="preco"><b>R$ 120,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Stick Multifuncional Proteção Solar Com Cor - 18g')">Adicionar à sacola</button>
+    </div>
+      <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/esfoliante_facial.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/esfoliante_facial1.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Esfoliante Facial com Extrato de Bambu - Facial Scrub - 100ml</h2>
+      <p class="texto_Card">O Esfoliante Facial com Extrato de Bambu promove uma limpeza profunda, auxiliando na renovação celular. Esfolia e hidrata, possui efeito clareador e calmante, O Facial Scrub deixa a pele com um toque de frescor</p> 
+      <span class="preco"><b>R$ 42,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Esfoliante Facial com Extrato de Bambu - 100ml')">Adicionar à sacola</button>
+    </div>
+      <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/gel_esfoliante.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/gel_esfoliante1.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Gel de Limpeza Esfoliante Facial - Purifying Cleansing Gel - 50ml</h2>
+      <p class="texto_Card">O Gel de Limpeza Esfoliante Facial limpa profundamente os poros e remove células mortas do rosto, ele esfolia suavemente e pode ser usado por todos os tipos de pele. Uso de 2 a 3 vezes por semana</p> 
+      <span class="preco"><b>R$ 28,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Gel de Limpeza Esfoliante Facial - 50ml')">Adicionar à sacola</button>
+    </div>
+      <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/hidratante_labial.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/hidratante_labial2.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Balm Labial Intense Cuide-se Bem Framboesa - 6,2g</h2>
+      <p class="texto_Card">O Balm Labial Intense Cuide-se Bem Framboesa vai fazer parte do seu dia a dia. Em edição limitada, possui efeito pH tint, que entrega um toque de cor de acordo com o pH da sua pele ,em uma textura cremosa, de fácil aplicação e com cheirinho delicioso e suculento de Framboesa</p> 
+      <span class="preco"><b>R$ 38,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Balm Labial Intense Cuide-se Bem Framboesa - 6,2g')">Adicionar à sacola</button>
+    </div>
+     <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/mascara_labial.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/mascara_labial1.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Máscara Labial Noturna Lip Repair Eudora Niina Skin - 9g</h2>
+      <p class="texto_Card">A Máscara Labial Noturna Lip Repair Eudora Niina Skin 9g foi especialmente desenvolvida para hidratar e repara os lábios, com ela você acorda no dia seguinte com os lábios lindos e renovados em apenas 8 horas</p> 
+      <span class="preco"><b>R$ 20,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Máscara Labial Noturna Lip Repair Eudora Niina Skin - 9g')">Adicionar à sacola</button>
+    </div>
+     <div class="card">
+      <!-- Área do carrossel de imagens -->
+      <div class="slider">
+        <!-- Imagens do produto (apenas uma ficará visível por vez) -->
+        <img src="img/mascara_facial_oceane.png" class="slide active"> <!-- imagem inicial visível -->
+        <img src="img/mascara_facial_oceane1.png" class="slide">       <!-- imagens ocultas -->
+        
+  
+        <!-- Botões de navegação -->
+        <button class="prev">&#10094;</button> <!-- seta esquerda (voltar) -->
+        <button class="next">&#10095;</button> <!-- seta direita (avançar) -->
+      </div>
+
+  
+      <!-- Informações do produto -->
+      <h2 class ="titulo_Card">Máscara Facial Noturna com Melancia - Watermelon Sleep Mask - 35ml</h2>
+      <p class="texto_Card">A Máscara Facial Noturna com melancia possui embalagem com tampa e rende até 4 usos. Com extrato de melancia e ácido hialurônico, hidrata, controla a oleosidade e ajuda na prevenção do envelhecimento precoce da pele</p> 
+      <span class="preco"><b>R$ 20,00</b></span>
+      <button class="botao-sacola" onclick="adicionarProduto('Máscara Facial Noturna com Melancia - 35ml')">Adicionar à sacola</button>
+    </div>
+    
+    
+</div>
+    
+   
+    <script>
+    // Para cada slider na página (caso tenha vários produtos)
+    document.querySelectorAll('.slider').forEach(slider => {
+      const slides = slider.querySelectorAll('.slide'); // pega todas as imagens
+      let index = 0; // índice da imagem atual
+    
+      // Função que exibe a imagem com índice "i" e esconde as outras
+      const showSlide = (i) => {
+        slides.forEach((slide, j) => {
+          slide.classList.toggle('active', j === i); // ativa só a imagem atual
+        });
+      };
+    
+      // Quando clicar no botão "next" (seta para direita)
+      slider.querySelector('.next').addEventListener('click', () => {
+        index = (index + 1) % slides.length; // avança circularmente
+        showSlide(index); // mostra a nova imagem
+      });
+    
+      // Quando clicar no botão "prev" (seta para esquerda)
+      slider.querySelector('.prev').addEventListener('click', () => {
+        index = (index - 1 + slides.length) % slides.length; // volta circularmente
+        showSlide(index); // mostra a nova imagem
+      });
+    });
+    </script>
+  <script>
+    // Função para abrir o pop-up com a imagem e descrição
+    function abrirPopup(img) {
+      const popup = document.getElementById('popup');
+      const popupImg = document.getElementById('popup-img');
+      const popupDesc = document.getElementById('popup-desc');
+      
+      // Configura a imagem do pop-up
+      popupImg.src = img.src;
+      
+      // Pega a descrição da imagem, definida no atributo data-desc
+      const descricao = img.getAttribute('data-desc');
+      popupDesc.innerHTML = descricao;
+      
+      // Exibe o pop-up
+      popup.style.display = 'block';
+    }
+
+    // Função para fechar o pop-up
+    function fecharPopup() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'none';
+    }
+  </script>
+
+<script defer>
+    function atualizarContadorSacola() { //ATUALIZA O CONTADOR DE ITENS DA SACOLA
+
+      const carrinho = JSON.parse(localStorage.getItem('sacola')) || []; //RECUPERA OS ITENS DA SACOLA DO localStorage OU CRIA UM array VAZIO SE NÃO TIVER NADA
+      
+      const contador = document.getElementById('contador-sacola'); //SELECIONA O ELEMENTO HTML COM O ID "contador-sacola"
+      
+      contador.textContent = carrinho.length; //DEFINE O NÚMERO DE ITENS DA SACOLA COMO TEXTO DO CONTADOR
+  
+      contador.style.display = carrinho.length > 0 ? 'inline-block' : 'none'; //MOSTRA OU OCULTA O CONTADOR| DEPENDENDO SE TEM PRODUTOS ADICIONADOS OU NÃO
+    }
+  
+    function adicionarProduto(nome) { //FUNÇÃO PARA ADICIONAR UM PRODUTO À SACOLA
+
+      let carrinho = JSON.parse(localStorage.getItem('sacola')) || []; //RECUPERA A SACOLA DO localStorage OU INICIALIZA UM array VAZIO
+  
+      carrinho.push(nome);//ADICIONA O NOME DO PRODUTO AO array
+  
+      localStorage.setItem('sacola', JSON.stringify(carrinho));//SALVA NOVAMENTE O array ATUALIZADO NO localStorage
+  
+      atualizarContadorSacola();//ATUALIZA O CONTADOR VISUAL DA SACOLA
+    }
+  
+
+    function abrirSacola() { //FUNÇÃO PARA REDIRECIONAR PARA A PAGINA DE PAGAMENTO
+      window.location.href = "pagamento.html";
+    }
+  
+    function abrirCadastro() { //FUNÇÃO PARA REDIRECIONAR PARA A PAGINA DE CADASTRO
+      window.location.href = "cadastro.html";
+    }
+  
+    document.addEventListener("DOMContentLoaded", atualizarContadorSacola); //QUANDO O DOM CARREGA POR COMPLETO, O CONTADOR DA SACOLA ATUALIZA
+  </script>
+  <!--ENCERRA O SCRIPT--><footer class="footer">
+    <p>&copy; 2025 SPA Regina Vidal. Todos os direitos reservados.</p>
+  </footer>
+</head>
+<body>

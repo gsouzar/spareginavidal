@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Procedimentos - SPA Regina Vidal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="IMG/LOGO.png">
+</head>
+
+<body>
+   <!--ESTILIZAÇÃO DO TOPO DO SITE/////MENU(TITULO PRINCIPAL E ICONES)-->
+   <header>
+    <div class="divHeader">
+      <img src="IMG/LOGO (2).png" class="logo" title="Meu site" /> <!--ADICIONA O LOGO-->
+      
+      <h1 class="nomeEmpresa">SPA Regina Vidal</h1> <!--ADICIONA A ESCRITA DO NOME DA EMPRESA-->
+      
+      <div class="icones-header">
+        <div class="pessoa" onclick="window.location.href='cadastro.html'">  <!--COLOCAR UM HREF NO ICONE DE PESSOA-->
+          <img src="IMG/iconePessoa.png" class="icone_pessoa" /> <!--IMPORTANDO A IMAGEM DO ICONE DE PESSOA-->
+        </div>
+        <div class="sacola" onclick="window.location.href='pagamento.html'"> <!--COLOCAR UM HREF NO ICONE DE SACOLA QUE LEVA A PESSOA PARA O PAGAMENTO-->
+          <img src="IMG/sacola.png" class="icone_sacola" /> <!--IMPORTANDO A IMAGEM DO ICONE DE PESSOA-->
+          <span id="contador-sacola" class="contador-sacola">0</span> <!--CONFIGURAÇÃO PARA A CONTAGEM DE PRODUTOS NA SACOLA-->
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!--CONFIGURA O MENU DA PAGINA////INICIO|PROCEDIMENTO|AGENDAMENTO|PRODUTOS-->
+   <!--CONFIGURA O MENU DA PAGINA////INICIO|PROCEDIMENTO|AGENDAMENTO|PRODUTOS-->
+  <nav class="menu">
+    <ul class="lista_menu">
+      <li class="item-menu">
+        <a href="meusite.html">Início</a>  <!--TITULO DA PRIMEIRA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="#sobre-nos">Sobre Nós</a>  <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (INICIO)-->
+          <a href="#estabelecimentoo">Nosso Estabelecimento</a>
+          <a href="#procedimentoo">Procedimentos</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="procedimento.html">Procedimentos</a> <!--TITULO DA SEGUNDA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="procedimentoFaciais.html">Facial</a> <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PROCEDIMENTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          <a href="procedimentoCorporais.html">Corporal</a>
+          <a href="procedimentoLaser.html">Laser</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="produtos.html">Produtos</a><!--TITULO DA TERCEIRA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="produtosCorporais.html">Corporal</a> <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PRODUTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          <a href="produtosFacial.html">Facial</a> 
+          <a href="produtosPromoção.html">Promoção</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="agendamento.html">Agendamento</a>  <!--TITULO DA QUARTA OPÇÃO MENU-->
+        <div class="submenu">
+   <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PRODUTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          
+        </div>
+      </li>
+    </ul>
+  </nav>
+ 
+ <div class="container">
+   <!-- Exemplo de card para o produto: Océane - Sérum Facial Ácido Hialurônico -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-20%</div>
+    <img src="IMG/oceane_acido_hialuronico1.png" class="slide active">
+    <img src="IMG/oceane_acido_hialuronico2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Océane Sérum Facial Ácido Hialurônico - 30ml</h2>
+  <p class="texto_Card">Sérum com ácido hialurônico que hidrata profundamente, suaviza linhas finas e melhora a elasticidade da pele.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 79,90</span>
+    <span class="preco-promocional">R$ 63,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Océane Sérum Facial Ácido Hialurônico - 30ml')">Adicionar à sacola</button>
+</div>
+
+<!-- Océane Sérum de Niacinamida + Zinco -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-15%</div>
+    <img src="IMG/oceane_niacinamida1.png" class="slide active">
+    <img src="IMG/oceane_niacinamida2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Océane Sérum de Niacinamida + Zinco - 30ml</h2>
+  <p class="texto_Card">Combinação poderosa para controlar a oleosidade, reduzir poros dilatados e acalmar a pele acneica.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 69,00</span>
+    <span class="preco-promocional">R$ 58,65</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Océane Sérum de Niacinamida + Zinco - 30ml')">Adicionar à sacola</button>
+</div>
+
+<!-- Océane Tônico Facial BHA Ácido Salicílico -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-10%</div>
+    <img src="IMG/oceane_bha_tonico1.png" class="slide active">
+    <img src="IMG/oceane_bha_tonico2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Océane Tônico Facial BHA Ácido Salicílico - 150ml</h2>
+  <p class="texto_Card">Tônico esfoliante com ação antiacne, desobstrui os poros e melhora a textura da pele.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 55,00</span>
+    <span class="preco-promocional">R$ 49,50</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Océane Tônico Facial BHA Ácido Salicílico - 150ml')">Adicionar à sacola</button>
+</div>
+
+<!-- Océane Máscara de Argila Rosa -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-25%</div>
+    <img src="IMG/oceane_argila_rosa1.png" class="slide active">
+    <img src="IMG/oceane_argila_rosa2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Océane Máscara de Argila Rosa - 60g</h2>
+  <p class="texto_Card">Máscara com efeito calmante e revitalizante, ideal para peles sensíveis. Promove hidratação e luminosidade.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 49,90</span>
+    <span class="preco-promocional">R$ 37,42</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Océane Máscara de Argila Rosa - 60g')">Adicionar à sacola</button>
+</div>
+
+<!-- Océane Gua Sha Facial Quartzo Rosa -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-18%</div>
+    <img src="IMG/oceane_guasha1.png" class="slide active">
+    <img src="IMG/oceane_guasha2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Océane Gua Sha Facial Quartzo Rosa</h2>
+  <p class="texto_Card">Ferramenta de massagem facial que estimula a circulação, alivia tensões e promove efeito lifting.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 89,00</span>
+    <span class="preco-promocional">R$ 72,98</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Océane Gua Sha Facial Quartzo Rosa')">Adicionar à sacola</button>
+</div>
+<!-- Principia Sérum Vitamina C 10% + Ácido Ferúlico -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-22%</div>
+    <img src="IMG/principia_vitaminaC2.png" class="slide active">
+    <img src="IMG/principia_vitaminaC1.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Principia Sérum Vitamina C 10% + Ácido Ferúlico - 30ml</h2>
+  <p class="texto_Card">Sérum antioxidante que protege a pele dos danos causados pelos radicais livres e promove luminosidade.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 129,00</span>
+    <span class="preco-promocional">R$ 100,62</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Principia Sérum Vitamina C 10% + Ácido Ferúlico - 30ml')">Adicionar à sacola</button>
+</div>
+
+<!-- Principia Sérum Niacinamida 10% -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-18%</div>
+    <img src="IMG/principia_niacinamida1.png" class="slide active">
+    <img src="IMG/principia_niacinamida2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Principia Sérum Niacinamida 10% - 30ml</h2>
+  <p class="texto_Card">Controla oleosidade e melhora a textura da pele, reduzindo manchas e poros dilatados.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 75,00</span>
+    <span class="preco-promocional">R$ 61,50</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Principia Sérum Niacinamida 10% - 30ml')">Adicionar à sacola</button>
+</div>
+
+<!-- Principia Sérum Retinol Puro 0.3% -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-20%</div>
+    <img src="IMG/principia_retinol1.png" class="slide active">
+    <img src="IMG/principia_retinol2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Principia Sérum Retinol Puro 0.3% - 30ml</h2>
+  <p class="texto_Card">Sérum anti-idade que estimula a renovação celular e reduz linhas finas.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 98,00</span>
+    <span class="preco-promocional">R$ 78,40</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Principia Sérum Retinol Puro 0.3% - 30ml')">Adicionar à sacola</button>
+</div>
+
+<!-- Principia Hidratante Facial H1 (com esqualano e glicerina) -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-19%</div>
+    <img src="IMG/principia_hidratante1.png" class="slide active">
+    <img src="IMG/principia_hidratante2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Principia Hidratante Facial H1 (com esqualano e glicerina) - 50ml</h2>
+  <p class="texto_Card">Hidratante leve que mantém a pele macia e protegida, ideal para uso diário.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 72,00</span>
+    <span class="preco-promocional">R$ 58,32</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Principia Hidratante Facial H1 (com esqualano e glicerina) - 50ml')">Adicionar à sacola</button>
+</div>
+<!-- Creamy Sérum de Ácido Mandélico -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-15%</div>
+    <img src="IMG/creamy_acido_mandelico1.png" class="slide active">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Creamy Sérum de Ácido Mandélico - 30ml</h2>
+  <p class="texto_Card">Promove renovação celular suave, clareia manchas e melhora a textura da pele.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 95,00</span>
+    <span class="preco-promocional">R$ 80,75</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Creamy Sérum de Ácido Mandélico - 30ml')">Adicionar à sacola</button>
+</div>
+
+<!-- Creamy Sérum de Ácido Lático -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-18%</div>
+    <img src="IMG/creamy_acido_latico1.png" class="slide active">
+
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Creamy Sérum de Ácido Lático - 30ml</h2>
+  <p class="texto_Card">Hidrata profundamente, suaviza linhas finas e renova a superfície da pele.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 92,00</span>
+    <span class="preco-promocional">R$ 75,44</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Creamy Sérum de Ácido Lático - 30ml')">Adicionar à sacola</button>
+</div>
+
+<!-- Creamy Gel com Ácido Salicílico -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-20%</div>
+    <img src="IMG/creamy_acido_salicilico1.png" class="slide active">
+    <img src="IMG/creamy_acido_salicilico2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Creamy Gel com Ácido Salicílico - 30ml</h2>
+  <p class="texto_Card">Ajuda a controlar oleosidade e prevenir acne com ação anti-inflamatória.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 85,00</span>
+    <span class="preco-promocional">R$ 68,00</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Creamy Gel com Ácido Salicílico - 30ml')">Adicionar à sacola</button>
+</div>
+
+<!-- Creamy Cleanser Espuma de Limpeza -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-17%</div>
+    <img src="IMG/creamy_cleanser1.png" class="slide active">
+    <img src="IMG/creamy_cleanser2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Creamy Cleanser Espuma de Limpeza - 150ml</h2>
+  <p class="texto_Card">Espuma suave que limpa profundamente sem agredir a pele.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 60,00</span>
+    <span class="preco-promocional">R$ 49,80</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Creamy Cleanser Espuma de Limpeza - 150ml')">Adicionar à sacola</button>
+</div>
+<!-- Sallve Antioxidante Hidratante -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-16%</div>
+    <img src="IMG/sallve_antioxidante1.png" class="slide active">
+    <img src="IMG/sallve_antioxidante2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Sallve Antioxidante Hidratante - 50ml</h2>
+  <p class="texto_Card">Hidratante com ação antioxidante que protege a pele contra radicais livres.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 115,00</span>
+    <span class="preco-promocional">R$ 96,60</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Sallve Antioxidante Hidratante - 50ml')">Adicionar à sacola</button>
+</div>
+
+<!-- Sallve Esfoliante Enzimático -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-18%</div>
+    <img src="IMG/sallve_esfoliante1.png" class="slide active">
+    <img src="IMG/sallve_esfoliante2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Sallve Esfoliante Enzimático - 75ml</h2>
+  <p class="texto_Card">Esfoliante suave que remove células mortas e promove renovação da pele.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 78,00</span>
+    <span class="preco-promocional">R$ 63,96</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Sallve Esfoliante Enzimático - 75ml')">Adicionar à sacola</button>
+</div>
+
+<!-- Sallve Gel de Limpeza Facial -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-12%</div>
+    <img src="IMG/sallve_gel_limpeza1.png" class="slide active">
+    <img src="IMG/sallve_gel_limpeza2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Sallve Gel de Limpeza Facial - 150ml</h2>
+  <p class="texto_Card">Gel que limpa profundamente, equilibrando a oleosidade da pele.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 70,00</span>
+    <span class="preco-promocional">R$ 61,60</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Sallve Gel de Limpeza Facial - 150ml')">Adicionar à sacola</button>
+</div>
+
+<!-- Sallve Tônico Renovador -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-15%</div>
+    <img src="IMG/sallve_tonico1.png" class="slide active">
+    <img src="IMG/sallve_tonico2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Sallve Tônico Renovador - 100ml</h2>
+  <p class="texto_Card">Tônico que renova a pele, reduz brilho e ajuda a controlar imperfeições.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 80,00</span>
+    <span class="preco-promocional">R$ 68,00</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Sallve Tônico Renovador - 100ml')">Adicionar à sacola</button>
+</div>
+
+<!-- Sallve Sérum Uniformizador -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-19%</div>
+    <img src="IMG/sallve_serum_uniformizador1.png" class="slide active">
+    <img src="IMG/sallve_serum_uniformizador2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Sallve Sérum Uniformizador - 30ml</h2>
+  <p class="texto_Card">Sérum que uniformiza o tom da pele e reduz manchas e marcas.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 110,00</span>
+    <span class="preco-promocional">R$ 89,10</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Sallve Sérum Uniformizador - 30ml')">Adicionar à sacola</button>
+</div>
+<!-- La Roche-Posay Effaclar Duo+ -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-20%</div>
+    <img src="IMG/lrp_effaclar_duo1.png" class="slide active">
+    <img src="IMG/lrp_effaclar_duo2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">La Roche-Posay Effaclar Duo+ - 40ml</h2>
+  <p class="texto_Card">Tratamento antiacne que reduz imperfeições e previne marcas.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 110,00</span>
+    <span class="preco-promocional">R$ 88,00</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('La Roche-Posay Effaclar Duo+ - 40ml')">Adicionar à sacola</button>
+</div>
+
+<!-- La Roche-Posay Effaclar Gel Concentrado -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-18%</div>
+    <img src="IMG/lrp_effaclar_gel1.png" class="slide active">
+    <img src="IMG/lrp_effaclar_gel2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">La Roche-Posay Effaclar Gel Concentrado - 200ml</h2>
+  <p class="texto_Card">Gel de limpeza que controla oleosidade e purifica a pele oleosa.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 90,00</span>
+    <span class="preco-promocional">R$ 73,80</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('La Roche-Posay Effaclar Gel Concentrado - 200ml')">Adicionar à sacola</button>
+</div>
+
+<!-- La Roche-Posay Hyalu B5 Sérum -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-22%</div>
+    <img src="IMG/lrp_hyalu_b5_serum1.png" class="slide active">
+    <img src="IMG/lrp_hyalu_b5_serum2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">La Roche-Posay Hyalu B5 Sérum - 30ml</h2>
+  <p class="texto_Card">Sérum hidratante com ácido hialurônico e vitamina B5 que regenera a pele.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 180,00</span>
+    <span class="preco-promocional">R$ 140,40</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('La Roche-Posay Hyalu B5 Sérum - 30ml')">Adicionar à sacola</button>
+</div>
+
+<!-- La Roche-Posay Anthelios Fluido Invisível -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-15%</div>
+    <img src="IMG/lrp_anthelios_fluido1.png" class="slide active">
+    <img src="IMG/lrp_anthelios_fluido2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">La Roche-Posay Anthelios Fluido Invisível - 60ml</h2>
+  <p class="texto_Card">Protetor solar com alta proteção e textura leve, ideal para peles sensíveis.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 95,00</span>
+    <span class="preco-promocional">R$ 80,75</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('La Roche-Posay Anthelios Fluido Invisível - 60ml')">Adicionar à sacola</button>
+</div>
+
+<!-- La Roche-Posay Cicaplast Baume B5 -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-17%</div>
+    <img src="IMG/lrp_cicaplast_baume1.png" class="slide active">
+    <img src="IMG/lrp_cicaplast_baume2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">La Roche-Posay Cicaplast Baume B5 - 40ml</h2>
+  <p class="texto_Card">Pomada regeneradora para pele irritada e sensibilizada.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 75,00</span>
+    <span class="preco-promocional">R$ 62,25</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('La Roche-Posay Cicaplast Baume B5 - 40ml')">Adicionar à sacola</button>
+</div>
+<!-- Skinceuticals CE Ferulic -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-21%</div>
+    <img src="IMG/skinceuticals_ce_ferulic1.png" class="slide active">
+    <img src="IMG/skinceuticals_ce_ferulic2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Skinceuticals CE Ferulic - 30ml</h2>
+  <p class="texto_Card">Antioxidante que protege a pele contra danos ambientais e envelhecimento precoce.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 320,00</span>
+    <span class="preco-promocional">R$ 252,80</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Skinceuticals CE Ferulic - 30ml')">Adicionar à sacola</button>
+</div>
+
+<!-- Skinceuticals Blemish + Age Defense -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-19%</div>
+    <img src="IMG/skinceuticals_blemish_age1.png" class="slide active">
+    <img src="IMG/skinceuticals_blemish_age2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Skinceuticals Blemish + Age Defense - 30ml</h2>
+  <p class="texto_Card">Sérum que reduz imperfeições e sinais de envelhecimento da pele.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 280,00</span>
+    <span class="preco-promocional">R$ 226,80</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Skinceuticals Blemish + Age Defense - 30ml')">Adicionar à sacola</button>
+</div>
+
+<!-- Skinceuticals Silymarin CF -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-17%</div>
+    <img src="IMG/skinceuticals_silymarin_cf1.png" class="slide active">
+    <img src="IMG/skinceuticals_silymarin_cf2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Skinceuticals Silymarin CF - 30ml</h2>
+  <p class="texto_Card">Antioxidante que protege a pele oleosa contra danos causados pelo sol e poluição.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 270,00</span>
+    <span class="preco-promocional">R$ 224,10</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Skinceuticals Silymarin CF - 30ml')">Adicionar à sacola</button>
+</div>
+
+<!-- Skinceuticals Hydrating B5 Gel -->
+<div class="card">
+  <div class="slider">
+    <div class="promocao">-20%</div>
+    <img src="IMG/skinceuticals_hydrating_b5_1.png" class="slide active">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Skinceuticals Hydrating B5 Gel - 30ml</h2>
+  <p class="texto_Card">Gel hidratante que ajuda a restaurar a umidade da pele com vitamina B5.</p>
+  <div class="preco">
+    <span class="preco-original">R$ 230,00</span>
+    <span class="preco-promocional">R$ 184,00</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Skinceuticals Hydrating B5 Gel - 30ml')">Adicionar à sacola</button>
+</div>
+
+    
+</div>
+    
+   
+    <script>
+    // Para cada slider na página (caso tenha vários produtos)
+    document.querySelectorAll('.slider').forEach(slider => {
+      const slides = slider.querySelectorAll('.slide'); // pega todas as imagens
+      let index = 0; // índice da imagem atual
+    
+      // Função que exibe a imagem com índice "i" e esconde as outras
+      const showSlide = (i) => {
+        slides.forEach((slide, j) => {
+          slide.classList.toggle('active', j === i); // ativa só a imagem atual
+        });
+      };
+    
+      // Quando clicar no botão "next" (seta para direita)
+      slider.querySelector('.next').addEventListener('click', () => {
+        index = (index + 1) % slides.length; // avança circularmente
+        showSlide(index); // mostra a nova imagem
+      });
+    
+      // Quando clicar no botão "prev" (seta para esquerda)
+      slider.querySelector('.prev').addEventListener('click', () => {
+        index = (index - 1 + slides.length) % slides.length; // volta circularmente
+        showSlide(index); // mostra a nova imagem
+      });
+    });
+    </script>
+
+
+<script defer>
+    function atualizarContadorSacola() { //ATUALIZA O CONTADOR DE ITENS DA SACOLA
+
+      const carrinho = JSON.parse(localStorage.getItem('sacola')) || []; //RECUPERA OS ITENS DA SACOLA DO localStorage OU CRIA UM array VAZIO SE NÃO TIVER NADA
+      
+      const contador = document.getElementById('contador-sacola'); //SELECIONA O ELEMENTO HTML COM O ID "contador-sacola"
+      
+      contador.textContent = carrinho.length; //DEFINE O NÚMERO DE ITENS DA SACOLA COMO TEXTO DO CONTADOR
+  
+      contador.style.display = carrinho.length > 0 ? 'inline-block' : 'none'; //MOSTRA OU OCULTA O CONTADOR| DEPENDENDO SE TEM PRODUTOS ADICIONADOS OU NÃO
+    }
+  
+    function adicionarProduto(nome) { //FUNÇÃO PARA ADICIONAR UM PRODUTO À SACOLA
+
+      let carrinho = JSON.parse(localStorage.getItem('sacola')) || []; //RECUPERA A SACOLA DO localStorage OU INICIALIZA UM array VAZIO
+  
+      carrinho.push(nome);//ADICIONA O NOME DO PRODUTO AO array
+  
+      localStorage.setItem('sacola', JSON.stringify(carrinho));//SALVA NOVAMENTE O array ATUALIZADO NO localStorage
+  
+      atualizarContadorSacola();//ATUALIZA O CONTADOR VISUAL DA SACOLA
+    }
+  
+
+    function abrirSacola() { //FUNÇÃO PARA REDIRECIONAR PARA A PAGINA DE PAGAMENTO
+      window.location.href = "pagamento.html";
+    }
+  
+    function abrirCadastro() { //FUNÇÃO PARA REDIRECIONAR PARA A PAGINA DE CADASTRO
+      window.location.href = "cadastro.html";
+    }
+  
+    document.addEventListener("DOMContentLoaded", atualizarContadorSacola); //QUANDO O DOM CARREGA POR COMPLETO, O CONTADOR DA SACOLA ATUALIZA
+  </script><footer class="footer">
+    <p>&copy; 2025 SPA Regina Vidal. Todos os direitos reservados.</p>
+  </footer>
+  </body><!--ENCERRA O SCRIPT-->
+</head>

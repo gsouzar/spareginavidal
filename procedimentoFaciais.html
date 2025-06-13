@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Procedimentos - SPA Regina Vidal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="IMG/LOGO.png">
+</head>
+<body>
+   <!--ESTILIZAÇÃO DO TOPO DO SITE/////MENU(TITULO PRINCIPAL E ICONES)-->
+   <header>
+    <div class="divHeader">
+      <img src="IMG/LOGO (2).png" class="logo" title="Meu site" /> <!--ADICIONA O LOGO-->
+      
+      <h1 class="nomeEmpresa">SPA Regina Vidal</h1> <!--ADICIONA A ESCRITA DO NOME DA EMPRESA-->
+      
+      <div class="icones-header">
+        <div class="pessoa" onclick="window.location.href='cadastro.html'">  <!--COLOCAR UM HREF NO ICONE DE PESSOA-->
+          <img src="IMG/iconePessoa.png" class="icone_pessoa" /> <!--IMPORTANDO A IMAGEM DO ICONE DE PESSOA-->
+        </div>
+        <div class="sacola" onclick="window.location.href='pagamento.html'"> <!--COLOCAR UM HREF NO ICONE DE SACOLA QUE LEVA A PESSOA PARA O PAGAMENTO-->
+          <img src="IMG/sacola.png" class="icone_sacola" /> <!--IMPORTANDO A IMAGEM DO ICONE DE PESSOA-->
+          <span id="contador-sacola" class="contador-sacola">0</span> <!--CONFIGURAÇÃO PARA A CONTAGEM DE PRODUTOS NA SACOLA-->
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!--CONFIGURA O MENU DA PAGINA////INICIO|PROCEDIMENTO|AGENDAMENTO|PRODUTOS-->
+    <!--CONFIGURA O MENU DA PAGINA////INICIO|PROCEDIMENTO|AGENDAMENTO|PRODUTOS-->
+  <nav class="menu">
+    <ul class="lista_menu">
+      <li class="item-menu">
+        <a href="meusite.html">Início</a>  <!--TITULO DA PRIMEIRA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="#sobre-nos">Sobre Nós</a>  <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (INICIO)-->
+          <a href="#estabelecimentoo">Nosso Estabelecimento</a>
+          <a href="#procedimentoo">Procedimentos</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="procedimento.html">Procedimentos</a> <!--TITULO DA SEGUNDA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="procedimentoFaciais.html">Facial</a> <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PROCEDIMENTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          <a href="procedimentoCorporais.html">Corporal</a>
+          <a href="procedimentoLaser.html">Laser</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="produtos.html">Produtos</a><!--TITULO DA TERCEIRA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="produtosCorporais.html">Corporal</a> <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PRODUTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          <a href="produtosFacial.html">Facial</a> 
+          <a href="produtosPromoção.html">Promoção</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="agendamento.html">Agendamento</a>  <!--TITULO DA QUARTA OPÇÃO MENU-->
+        <div class="submenu">
+   <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PRODUTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          
+        </div>
+      </li>
+    </ul>
+  </nav>
+ 
+  
+
+  <!-- Conteúdo principal: cards de procedimentos -->
+ <div class="container">
+
+    <div class="card-imagem">
+      <img src="img/limpeza_pele.png" alt="Limpeza de Pele Profissional" class="slide active" />
+      <h2 class="titulo_Card">Limpeza de Pele Profissional</h2>
+      <p class="texto_Card">Procedimento completo para remoção de impurezas, cravos e células mortas, deixando a pele renovada e luminosa.</p>
+      <button class="botao-sacola" onclick="window.location.href='agendamento.html'">Agendar</button>
+    </div>
+
+    <div class="card-imagem">
+      <img src="img/pelling.webp" alt="Peeling Químico" class="slide active" />
+      <h2 class="titulo_Card">Peeling Químico</h2>
+      <p class="texto_Card">Tratamento que promove renovação celular, uniformiza o tom da pele e reduz manchas, linhas finas e acne.</p>
+      <button class="botao-sacola" onclick="window.location.href='agendamento.html'">Agendar</button>
+    </div>
+
+    <div class="card-imagem">
+      <img src="img/hidratacao_facial.png" alt="Hidratação Facial Intensa" class="slide active" />
+      <h2 class="titulo_Card">Hidratação Facial Intensa</h2>
+      <p class="texto_Card">Tratamento com ativos poderosos que restauram a barreira de hidratação da pele, deixando-a macia e viçosa.</p>
+      <button class="botao-sacola" onclick="window.location.href='agendamento.html'">Agendar</button>
+    </div>
+
+    <div class="card-imagem">
+      <img src="img/radiofrequencia.png" alt="Radiofrequência Facial" class="slide active" />
+      <h2 class="titulo_Card">Radiofrequência Facial</h2>
+      <p class="texto_Card">Estimula a produção de colágeno, promovendo lifting natural, redução de flacidez e rejuvenescimento facial.</p>
+      <button class="botao-sacola" onclick="window.location.href='agendamento.html'">Agendar</button>
+    </div>
+
+    <div class="card-imagem">
+      <img src="img/ultrassom.jpg" alt="Ultrassom Facial" class="slide active" />
+      <h2 class="titulo_Card">Ultrassom Facial</h2>
+      <p class="texto_Card">Técnica que promove limpeza profunda, absorção de ativos e estimulação do colágeno para pele mais firme.</p>
+      <button class="botao-sacola" onclick="window.location.href='agendamento.html'">Agendar</button>
+    </div>
+
+    <div class="card-imagem">
+      <img src="img/Microagulhamento-Facial.jpg" alt="Microagulhamento" class="slide active" />
+      <h2 class="titulo_Card">Microagulhamento</h2>
+      <p class="texto_Card">Procedimento que estimula a regeneração da pele, tratando cicatrizes de acne, rugas e promovendo rejuvenescimento.</p>
+      <button class="botao-sacola" onclick="window.location.href='agendamento.html'">Agendar</button>
+    </div>
+
+    <div class="card-imagem">
+      <img src="img/Laser-Venus-2-1024x683.jpg" alt="Luz Pulsada" class="slide active" />
+      <h2 class="titulo_Card">Luz Pulsada (IPL)</h2>
+      <p class="texto_Card">Tratamento para remoção de manchas, vasinhos e pelos, além de promover rejuvenescimento facial.</p>
+      <button class="botao-sacola" onclick="window.location.href='agendamento.html'">Agendar</button>
+    </div>
+
+    <div class="card-imagem">
+      <img src="img/Toxina-botulinica.jpg" alt="Toxina Botulínica" class="slide active" />
+      <h2 class="titulo_Card">Toxina Botulínica</h2>
+      <p class="texto_Card">Aplicação profissional para suavizar rugas dinâmicas e linhas de expressão, com resultados naturais.</p>
+      <button class="botao-sacola" onclick="window.location.href='agendamento.html'">Agendar</button>
+    </div>
+
+    <div class="card-imagem">
+      <img src="img/preenchimento-facial.jpg" alt="Preenchimento Facial" class="slide active" />
+      <h2 class="titulo_Card">Preenchimento Facial</h2>
+      <p class="texto_Card">Técnica para restaurar volume, contornar o rosto e suavizar sulcos, proporcionando rejuvenescimento imediato.</p>
+      <button class="botao-sacola" onclick="window.location.href='agendamento.html'">Agendar</button>
+    </div>
+  </div>
+ <script defer>
+    function atualizarContadorSacola() { //ATUALIZA O CONTADOR DE ITENS DA SACOLA
+
+      const carrinho = JSON.parse(localStorage.getItem('sacola')) || []; //RECUPERA OS ITENS DA SACOLA DO localStorage OU CRIA UM array VAZIO SE NÃO TIVER NADA
+      
+      const contador = document.getElementById('contador-sacola'); //SELECIONA O ELEMENTO HTML COM O ID "contador-sacola"
+      
+      contador.textContent = carrinho.length; //DEFINE O NÚMERO DE ITENS DA SACOLA COMO TEXTO DO CONTADOR
+  
+      contador.style.display = carrinho.length > 0 ? 'inline-block' : 'none'; //MOSTRA OU OCULTA O CONTADOR| DEPENDENDO SE TEM PRODUTOS ADICIONADOS OU NÃO
+    }
+  
+    function adicionarProduto(nome) { //FUNÇÃO PARA ADICIONAR UM PRODUTO À SACOLA
+
+      let carrinho = JSON.parse(localStorage.getItem('sacola')) || []; //RECUPERA A SACOLA DO localStorage OU INICIALIZA UM array VAZIO
+  
+      carrinho.push(nome);//ADICIONA O NOME DO PRODUTO AO array
+  
+      localStorage.setItem('sacola', JSON.stringify(carrinho));//SALVA NOVAMENTE O array ATUALIZADO NO localStorage
+  
+      atualizarContadorSacola();//ATUALIZA O CONTADOR VISUAL DA SACOLA
+    }
+  
+
+    function abrirSacola() { //FUNÇÃO PARA REDIRECIONAR PARA A PAGINA DE PAGAMENTO
+      window.location.href = "pagamento.html";
+    }
+  
+    function abrirCadastro() { //FUNÇÃO PARA REDIRECIONAR PARA A PAGINA DE CADASTRO
+      window.location.href = "cadastro.html";
+    }
+  
+    document.addEventListener("DOMContentLoaded", atualizarContadorSacola); //QUANDO O DOM CARREGA POR COMPLETO, O CONTADOR DA SACOLA ATUALIZA
+  </script>
+  <!-- Footer ou scripts se necessário -->
+  <footer class="footer">
+    <p>&copy; 2025 SPA Regina Vidal. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

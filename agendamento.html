@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agendamento - SPA Regina Vidal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="IMG/LOGO.png">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.4.3/imask.min.js"></script>
+</head>
+<body>
+  <body>
+    <header>
+      <div class="divHeader">
+        <img src="IMG/LOGO (2).png" class="logo" title="Meu site" />
+        
+        <h1 class="nomeEmpresa">SPA Regina Vidal</h1>
+        
+        <div class="icones-header">
+          <div class="pessoa" onclick="window.location.href='cadastro.html'">
+            <img src="IMG/iconePessoa.png" class="icone_pessoa" />
+          </div>
+          <div class="sacola" onclick="window.location.href='pagamento.html'">
+            <img src="IMG/sacola.png" class="icone_sacola" />
+            <span id="contador-sacola" class="contador-sacola">0</span>
+          </div>
+        </div>
+      </div>
+    </header>
+  <!--CONFIGURA O MENU DA PAGINA////INICIO|PROCEDIMENTO|AGENDAMENTO|PRODUTOS-->
+   <!--CONFIGURA O MENU DA PAGINA////INICIO|PROCEDIMENTO|AGENDAMENTO|PRODUTOS-->
+  <nav class="menu">
+    <ul class="lista_menu">
+      <li class="item-menu">
+        <a href="meusite.html">Início</a>  <!--TITULO DA PRIMEIRA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="#sobre-nos">Sobre Nós</a>  <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (INICIO)-->
+          <a href="#estabelecimentoo">Nosso Estabelecimento</a>
+          <a href="#procedimentoo">Procedimentos</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="procedimento.html">Procedimentos</a> <!--TITULO DA SEGUNDA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="procedimentoFaciais.html">Facial</a> <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PROCEDIMENTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          <a href="procedimentoCorporais.html">Corporal</a>
+          <a href="procedimentoLaser.html">Laser</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="produtos.html">Produtos</a><!--TITULO DA TERCEIRA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="produtosCorporais.html">Corporal</a> <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PRODUTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          <a href="produtosFacial.html">Facial</a> 
+          <a href="produtosPromoção.html">Promoção</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="agendamento.html">Agendamento</a>  <!--TITULO DA QUARTA OPÇÃO MENU-->
+        <div class="submenu">
+   <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PRODUTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          
+        </div>
+      </li>
+    </ul>
+  </nav>
+      <!--CONFIGURA O MENU DA PAGINA////INICIO|PROCEDIMENTO|AGENDAMENTO|PRODUTOS-->
+
+  <section class="section">
+    <h2 class="tituloAgendamento">Agende Seu Procedimento</h2>
+    <form class="form-agendamento" action="#" method="post">
+      <div class="form-group">
+        <label for="nome">Nome completo:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu Nome" required>
+      </div>
+
+      <div class="form-group">
+        <label for="celular">Celular (WhatsApp):</label>
+        <input type="tel" id="celular" name="celular" placeholder="Digite seu Telefone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu Email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="data">Data do Agendamento:</label>
+        <input type="date" id="data" name="data" required>
+      </div>
+
+      <div class="form-group">
+        <label for="horario">Horário:</label>
+        <select id="horario" name="horario" required>
+          <option value="">Selecione um horário</option>
+          <option>09:00</option>
+          <option>10:00</option>
+          <option>11:00</option>
+          <option>13:00</option>
+          <option>14:00</option>
+          <option>15:00</option>
+          <option>16:00</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="procedimento">Procedimento Desejado:</label>
+        <select id="procedimento" name="procedimento" required>
+          <option value="">Escolha um procedimento</option>
+          <option>Limpeza de pele</option>
+          <option>Massagem relaxante</option>
+          <option>Drenagem linfática</option>
+          <option>Hidratação facial</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="observacoes">Observações adicionais:</label>
+        <textarea id="observacoes" name="observacoes" rows="4"></textarea>
+      </div>
+
+      <button type="submit" class="botaoProduto" disabled>Enviar Agendamento</button>
+    </form>
+  </section>
+  
+  <script>
+    // Inicialização do EmailJS
+    emailjs.init("sQgIgUgjb_-sIdAgX");
+    document.addEventListener('DOMContentLoaded', function() {
+      IMask(
+        document.getElementById('celular'),
+        {
+          mask: [
+            {
+              mask: '(00) 0000-0000'
+            },
+            {
+              mask: '(00) 00000-0000'
+            }
+          ]
+        }
+      );
+      const emailInput = document.getElementById('email');
+      emailInput.addEventListener('blur', function() {
+        const email = this.value.trim(); 
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      
+        if (email !== '' && !emailRegex.test(email)) {
+          alert('Por favor, insira um e-mail válido');
+        }
+      });
+      atualizarContadorSacola();
+      document.querySelectorAll('.form-agendamento input, .form-agendamento select').forEach(campo => {
+        campo.addEventListener('input', validarFormulario);
+        campo.addEventListener('change', validarFormulario);
+      });
+    });
+
+    function validarFormulario() {
+      const nome = document.getElementById('nome').value.trim();
+      const telefone = document.getElementById('celular').value.replace(/\D/g, '');
+      const email = document.getElementById('email').value;
+      const data = document.getElementById('data').value;
+      const horario = document.getElementById('horario').value;
+      const procedimento = document.getElementById('procedimento').value;
+      
+      const validacoes = {
+        nomeValido: nome.length >= 3,
+        telefoneValido: telefone.length >= 10, // Pelo menos 10 dígitos (aceita 10 ou 11)
+        emailValido: validarEmail(email),
+        dataValida: data !== '',
+        horarioValido: horario !== '',
+        procedimentoValido: procedimento !== ''
+      };
+      
+      const formularioValido = Object.values(validacoes).every(v => v);
+      document.querySelector('.botaoProduto').disabled = !formularioValido;
+      
+      return formularioValido;
+    }
+    function validarEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+    async function enviarAgendamentoPorEmail(event) {
+      event.preventDefault();
+      
+      if (!validarFormulario()) {
+        alert("Por favor, preencha todos os campos corretamente");
+        return;
+      }
+      
+      try {
+        if (typeof emailjs === "undefined") {
+          throw new Error("EmailJS não foi carregado corretamente");
+        }
+        
+        const email = document.getElementById('email').value;
+        if (!email || !validarEmail(email)) {
+          throw new Error("Por favor, insira um e-mail válido");
+        }
+        
+        const telefone = document.getElementById('celular').value;
+        if (telefone.replace(/\D/g, '').length < 10) {
+          throw new Error("Por favor, insira um telefone válido com DDD");
+        }
+        
+        const templateParams = {
+          to_email: email,
+          user_name: document.getElementById('nome').value,
+          user_phone: telefone,
+          procedimento: document.getElementById('procedimento').value,
+          data_agendamento: document.getElementById('data').value,
+          horario: document.getElementById('horario').value,
+          observacoes: document.getElementById('observacoes').value || "Nenhuma observação adicional",
+          data_envio: new Date().toLocaleDateString("pt-BR"),
+        };
+
+        const response = await emailjs.send(
+          "service_5oahmh6",
+          "template_bizvnex",
+          templateParams
+        );
+        
+        console.log("Sucesso:", response);
+        alert(`Agendamento confirmado! Detalhes enviados para ${email}`);
+        
+        // Limpa o formulário após o envio bem-sucedido
+        document.querySelector('.form-agendamento').reset();
+        document.querySelector('.botaoProduto').disabled = true;
+      } catch (error) {
+        console.error("Erro detalhado:", error);
+        alert(`Erro ao enviar: ${error.message || "Verifique o console para detalhes"}`);
+      }
+    }
+    document.querySelector('.form-agendamento').addEventListener('submit', enviarAgendamentoPorEmail);
+    function atualizarContadorSacola() {
+      const carrinho = JSON.parse(localStorage.getItem('sacola')) || [];
+      const contador = document.getElementById('contador-sacola');
+      contador.textContent = carrinho.length;
+      contador.style.display = carrinho.length > 0 ? 'inline-block' : 'none';
+    }
+
+    function adicionarProduto(nome) {
+      let carrinho = JSON.parse(localStorage.getItem('sacola')) || [];
+      carrinho.push(nome);
+      localStorage.setItem('sacola', JSON.stringify(carrinho));
+      atualizarContadorSacola();
+    }
+
+    function abrirSacola() {
+      window.location.href = "pagamento.html";
+    }
+
+    function abrirCadastro() {
+      window.location.href = "cadastro.html";
+    }
+  </script>
+  
+  
+  <footer class="footer">
+    <p>&copy; 2025 SPA Regina Vidal. Todos os direitos reservados.</p>
+  </footer>
+</body>
+
+</html>

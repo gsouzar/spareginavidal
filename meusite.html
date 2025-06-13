@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spa Regina Vidal</title>
+  <link rel="icon" href="IMG/LOGO.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+
+
+
+
+  <!--ESTILIZAÇÃO DO TOPO DO SITE/////MENU(TITULO PRINCIPAL E ICONES)-->
+  <header>
+    <div class="divHeader">
+      <img src="IMG/LOGO (2).png" class="logo" title="Meu site" /> <!--ADICIONA O LOGO-->
+
+      <h1 class="nomeEmpresa">SPA Regina Vidal</h1> <!--ADICIONA A ESCRITA DO NOME DA EMPRESA-->
+
+      <div class="icones-header">
+        <div class="pessoa" onclick="window.location.href='cadastro.html'"> <!--COLOCAR UM HREF NO ICONE DE PESSOA-->
+          <img src="IMG/iconePessoa.png" class="icone_pessoa" /> <!--IMPORTANDO A IMAGEM DO ICONE DE PESSOA-->
+        </div>
+        <div class="sacola" onclick="window.location.href='pagamento.html'">
+          <!--COLOCAR UM HREF NO ICONE DE SACOLA QUE LEVA A PESSOA PARA O PAGAMENTO-->
+          <img src="IMG/sacola.png" class="icone_sacola" /> <!--IMPORTANDO A IMAGEM DO ICONE DE PESSOA-->
+          <span id="contador-sacola" class="contador-sacola">0</span>
+          <!--CONFIGURAÇÃO PARA A CONTAGEM DE PRODUTOS NA SACOLA-->
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+
+
+   <!--CONFIGURA O MENU DA PAGINA////INICIO|PROCEDIMENTO|AGENDAMENTO|PRODUTOS-->
+  <nav class="menu">
+    <ul class="lista_menu">
+      <li class="item-menu">
+        <a href="meusite.html">Início</a>  <!--TITULO DA PRIMEIRA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="#sobre-nos">Sobre Nós</a>  <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (INICIO)-->
+          <a href="#estabelecimentoo">Nosso Estabelecimento</a>
+          <a href="#procedimentoo">Procedimentos</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="procedimento.html">Procedimentos</a> <!--TITULO DA SEGUNDA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="procedimentoFaciais.html">Facial</a> <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PROCEDIMENTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          <a href="procedimentoCorporais.html">Corporal</a>
+          <a href="procedimentoLaser.html">Laser</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="produtos.html">Produtos</a><!--TITULO DA TERCEIRA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="produtosCorporais.html">Corporal</a> <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PRODUTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          <a href="produtosFacial.html">Facial</a> 
+          <a href="produtosPromoção.html">Promoção</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="agendamento.html">Agendamento</a>  <!--TITULO DA QUARTA OPÇÃO MENU-->
+        <div class="submenu">
+   <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PRODUTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <main>
+
+
+
+
+
+    <!--SESSÃO QUE SERVE PARA CHAMAR A ATENÇÃO DOS CLIENTES/ CONTÉM UMA OFERTA IMAGINARIA-->
+    <section class="Inicio">
+      <div class="container3">
+        <h3 class="titulo_inicial">Sua beleza, nosso compromisso</h3>
+        <p class="texto_inicial2">
+          Agende tratamento selecionados com até <b>30%</b> OFF neste mês
+        </p>
+        <div style="text-align: center;">
+          <a href="procedimento.html" class="botaoIRprocedimento">
+            Conheça nossos procedimentos
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!--COMEÇA A SESSÃO SOBRE NÓS-->
+    <section class="sobre_nos" id="sobre-nos">
+      <h2 class="tituloSobre_nos">Sobre Nós</h2> <!--TITULO SOBRE NÓS-->
+      <img src="IMG/fotoRegina.jpg" class="fotoDona" /> <!--INSERE UMA FOTO DA DONA DA MARCA-->
+      <p class="texto_sobrenos">Com mais de 12 anos de dedicação à estética, Regina Vidal construiu sua trajetória
+        unindo técnica, empatia e paixão pelo cuidado com o outro. Desde o início de sua carreira, sempre acreditou que
+        a verdadeira beleza floresce quando aliada ao bem-estar e à autoestima.
+
+        Ao longo dos anos, especializou-se em diversos procedimentos faciais e corporais, mantendo-se atualizada com as
+        mais modernas tecnologias e tendências do setor. Cada atendimento é realizado com atenção individualizada,
+        respeitando as particularidades e desejos de cada cliente.
+
+        Sua missão é proporcionar experiências que vão além da estética, promovendo acolhimento, equilíbrio e confiança.
+        Aqui, cada detalhe foi pensado para oferecer um espaço seguro, elegante e transformador.</p>
+    </section>
+    <!--ENCERRA A SESSÃO SOBRE NÓS-->
+
+
+
+
+
+    <!--INICIA A SESSÃO ESTABELECIMENTO-->
+    <section class="estabelecimento" id="estabelecimentoo">
+      <h2 class="tituloEstabelecimento">Nosso Estabelecimento</h2> <!--TITULO DA SESSAO ESTABELECIMENTO-->
+      <p class="texto_estabelecimento">Ambiente acolhedor, elegante e equipado para oferecer segurança e conforto em
+        todos os tratamentos realizados. Cada detalhe foi pensado para o seu bem-estar.</p>
+      <div class="mapa">
+        <div style="display: center; justify-content: center;">
+          <!--IFRAME DE UM LINK GERADO PELO GOOGLE MAPS DE UMA LOCALIZAÇÃO-->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.655131611971!2d-46.56113712571114!3d-23.616698163625525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5ce0a3abb925%3A0x4e9ca04adcbcff46!2sAv.%20Goi%C3%A1s%2C%201800%20-%20Sala%20111%20-%20Santo%20Ant%C3%B4nio%2C%20S%C3%A3o%20Caetano%20do%20Sul%20-%20SP%2C%2009550-050!5e0!3m2!1spt-BR!2sbr!4v1746589469799!5m2!1spt-BR!2sbr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+    <!--ENCERRA A SESSÃO ESTABELECIMENTO-->
+
+
+
+
+
+    <!--INICIA A SESSAO PROCEDIMENTO-->
+    <section class="procedimento" id="procedimentoo">
+      <h2 class="tituloProcedimento">Procedimentos</h2> <!--TITULO PROCEDIMENTOS-->
+      <div class="servico2"> <!--CRIA VARIOS "CARDS" PARA APRESENTAR ALGUNS DOS PROCEDIMENTOS-->
+        <h3>Massagem Modeladora</h3> <!--TITULO DO CARD-->
+        <p>Modelagem corporal com técnicas intensas para reduzir medidas e melhorar o contorno.</p>
+        <!--ESCRITA SOBRE O PROCEDIMENTO DE DENTRO DO CARD-->
+      </div>
+      <div class="servico2">
+        <h3>Depilação a Laser</h3><!--TITULO DO CARD-->
+        <p>Remoção definitiva dos pelos com tecnologia avançada e segura.</p>
+        <!--ESCRITA SOBRE O PROCEDIMENTO DE DENTRO DO CARD-->
+      </div>
+      <div class="servico2">
+        <h3>Massagem Relaxante</h3><!--TITULO DO CARD-->
+        <p>Alívio do estresse e tensões com técnicas suaves e óleos essenciais.</p>
+        <!--ESCRITA SOBRE O PROCEDIMENTO DE DENTRO DO CARD-->
+      </div>
+      <div class="servico2">
+        <h3>Mesoterapia</h3><!--TITULO DO CARD-->
+        <p>Tratamento estético com microinjeções para rejuvenescimento e hidratação profunda.</p>
+        <!--ESCRITA SOBRE O PROCEDIMENTO DE DENTRO DO CARD-->
+      </div>
+      <div class="servico2">
+        <h3>Pós Operatório</h3><!--TITULO DO CARD-->
+        <p>Cuidados especializados para acelerar a recuperação e reduzir inchaços.</p>
+        <!--ESCRITA SOBRE O PROCEDIMENTO DE DENTRO DO CARD-->
+      </div>
+      <div class="servico2">
+        <h3>Tratamento Lipedema</h3><!--TITULO DO CARD-->
+        <p>Procedimentos voltados ao alívio e controle dos sintomas do lipedema.</p>
+        <!--ESCRITA SOBRE O PROCEDIMENTO DE DENTRO DO CARD-->
+      </div>
+      <div class="servico2">
+        <h3>Tratamento Facial</h3><!--TITULO DO CARD-->
+        <p>Limpeza, hidratação e rejuvenescimento para todos os tipos de pele.</p>
+        <!--ESCRITA SOBRE O PROCEDIMENTO DE DENTRO DO CARD-->
+      </div>
+      <a href="procedimento.html" class="botaosaibamais">Outros</a>
+      <!--BOTAO DE "SAIBA MAIS" OU "OUTROS" QUE VEM LOGO EM SEGUIDA DO ULTIMO CARD-->
+    </section>
+    <!--ENCERRA A SESSÃO PROCEDIMENTOS-->
+
+
+
+
+
+    <!--INICIA A SESSAO PRODUTOS-->
+    <section class="produtos">
+      <h2 class="titulo_produtos">Produtos</h2><!--TITULO PRODUTOS-->
+      <!--TEXTO QUE FALA SOBRE OS PRODUTOS-->
+      <p class="texto_produtos">Nossa estética oferece produtos de alta qualidade, como protetores solares, cremes
+        hidratantes e sabonetes naturais, que cuidam da sua pele de forma eficaz. Com opções para todas as necessidades,
+        garantimos resultados visíveis e duradouros, mantendo sua pele saudável e protegida.</p>
+      <div class="container2"> <!--CRIANDO UM CONTAINER QUE VAI CONTER CARDS COM PRODUTOS-->
+        <div class="card2">
+          <img src="IMG/protetorCCOR.png" alt="produto 1"> <!--IMAGEM DO PRODUTO1-->
+          <h2 class="titulo_Card">Protetor Solar Aqua Fluid</h2> <!--TITULO DO PRODUTO-->
+          <!--SOBRE O PRODUTO-->
+          <p class="texto_Card">O Protetor Solar Aqua Fluid FPS 50 é um protetor solar para pele oleosa e mista, com
+            textura aquosa ultrafluida de rápida absorção</p>
+          <span class="preco"><b>R$ 149,00</b></span> <!--VALOR DO PRODUTO-->
+          <button class="botao-sacola" onclick="adicionarProduto('Protetor Solar Aqua Fluid')">Adicionar à
+            sacola</button> <!--BOTAO QUE ADICIONA O PROTETOR NA CESTA -->
+        </div>
+        <div class="card2">
+          <img src="IMG/saboneteLIq.png" alt="produto 2"><!--IMAGEM DO PRODUTO2-->
+          <h2 class="titulo_Card">Gel de Limpeza Neutro - 240ml</h2><!--TITULO DO PRODUTO-->
+          <!--SOBRE O PRODUTO-->
+          <p class="texto_Card">O Gel de Limpeza Neutro da ADCOS é 3 em 1: ele higieniza, demaquila (inclusive
+            maquiagens resistentes à água) e possui ação antioxidante</p>
+          <span class="preco"><b>R$ 169,00</b></span><!--VALOR DO PRODUTO-->
+          <button class="botao-sacola" onclick="adicionarProduto('Gel de Limpeza Neutro')">Adicionar à sacola</button>
+          <!--BOTAO QUE ADICIONA O GEL DE LIMPEZA NA CESTA -->
+        </div>
+        <div class="card2">
+          <img src="IMG/locaoHidra.png" alt="produto 3"><!--IMAGEM DO PRODUTO3-->
+          <h2 class="titulo_Card">Loção Hidratante Cerave sem Perfume 340ml</h2><!--TITULO DO PRODUTO-->
+          <!--SOBRE O PRODUTO-->
+          <p class="texto_Card">Para pessoas com pele seca a extra seca, sua textura é fluida e de rápida absorção para
+            uma sensação suave na pele</p>
+          <span class="preco"><b>R$ 169,00</b></span><!--VALOR DO PRODUTO-->
+          <button class="botao-sacola" onclick="adicionarProduto('Loção Hidratante Cerave')">Adicionar à sacola</button>
+          <!--BOTAO QUE ADICIONA A LOÇÃO HIDRATANTE NA CESTA -->
+        </div>
+        <div style="text-align: center;">
+          <a href="produtos.html" class="botaoProduto">Encontre mais produtos</a>
+          <!--BOTAO QUE LEVA PARA A PAGINA COM MAIS PRODUTOS-->
+        </div>
+      </div>
+    </section>
+  </main>
+  <!--ENCERRA A SESSÃO PRODUTOS-->
+
+
+
+
+  <!--SCRIPT PARA FUNCIONAMENTO DA SACOLA DE PRODUTOS-->
+  <script defer>
+    function atualizarContadorSacola() { //ATUALIZA O CONTADOR DE ITENS DA SACOLA
+
+      const carrinho = JSON.parse(localStorage.getItem('sacola')) || []; //RECUPERA OS ITENS DA SACOLA DO localStorage OU CRIA UM array VAZIO SE NÃO TIVER NADA
+
+      const contador = document.getElementById('contador-sacola'); //SELECIONA O ELEMENTO HTML COM O ID "contador-sacola"
+
+      contador.textContent = carrinho.length; //DEFINE O NÚMERO DE ITENS DA SACOLA COMO TEXTO DO CONTADOR
+
+      contador.style.display = carrinho.length > 0 ? 'inline-block' : 'none'; //MOSTRA OU OCULTA O CONTADOR| DEPENDENDO SE TEM PRODUTOS ADICIONADOS OU NÃO
+    }
+
+    function adicionarProduto(nome) { //FUNÇÃO PARA ADICIONAR UM PRODUTO À SACOLA
+
+      let carrinho = JSON.parse(localStorage.getItem('sacola')) || []; //RECUPERA A SACOLA DO localStorage OU INICIALIZA UM array VAZIO
+
+      carrinho.push(nome);//ADICIONA O NOME DO PRODUTO AO array
+
+      localStorage.setItem('sacola', JSON.stringify(carrinho));//SALVA NOVAMENTE O array ATUALIZADO NO localStorage
+
+      atualizarContadorSacola();//ATUALIZA O CONTADOR VISUAL DA SACOLA
+    }
+
+
+    function abrirSacola() { //FUNÇÃO PARA REDIRECIONAR PARA A PAGINA DE PAGAMENTO
+      window.location.href = "pagamento.html";
+    }
+
+    function abrirCadastro() { //FUNÇÃO PARA REDIRECIONAR PARA A PAGINA DE CADASTRO
+      window.location.href = "cadastro.html";
+    }
+
+    document.addEventListener("DOMContentLoaded", atualizarContadorSacola); //QUANDO O DOM CARREGA POR COMPLETO, O CONTADOR DA SACOLA ATUALIZA
+  </script>
+  <!--ENCERRA O SCRIPT-->
+  </head>
+
+
+
+
+
+
+  <!--RODAPÉ DO SITE-->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Spa Regina Vidal— Elegância que transforma.</p> <!--FRASE DO RODAPÉ-->
+    </div>
+  </footer>
+  <!--ENCERRA O RODAPÉ-->
+</body>
+
+</html>
