@@ -1,0 +1,494 @@
+ 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Procedimentos - SPA Regina Vidal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="IMG/LOGO.png">
+</head>
+<body>
+   <!--ESTILIZAÇÃO DO TOPO DO SITE/////MENU(TITULO PRINCIPAL E ICONES)-->
+   <header>
+    <div class="divHeader">
+      <img src="IMG/LOGO (2).png" class="logo" title="Meu site" /> <!--ADICIONA O LOGO-->
+      
+      <h1 class="nomeEmpresa">SPA Regina Vidal</h1> <!--ADICIONA A ESCRITA DO NOME DA EMPRESA-->
+      
+      <div class="icones-header">
+        <div class="pessoa" onclick="window.location.href='cadastro.html'">  <!--COLOCAR UM HREF NO ICONE DE PESSOA-->
+          <img src="IMG/iconePessoa.png" class="icone_pessoa" /> <!--IMPORTANDO A IMAGEM DO ICONE DE PESSOA-->
+        </div>
+        <div class="sacola" onclick="window.location.href='pagamento.html'"> <!--COLOCAR UM HREF NO ICONE DE SACOLA QUE LEVA A PESSOA PARA O PAGAMENTO-->
+          <img src="IMG/sacola.png" class="icone_sacola" /> <!--IMPORTANDO A IMAGEM DO ICONE DE PESSOA-->
+          <span id="contador-sacola" class="contador-sacola">0</span> <!--CONFIGURAÇÃO PARA A CONTAGEM DE PRODUTOS NA SACOLA-->
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!--CONFIGURA O MENU DA PAGINA////INICIO|PROCEDIMENTO|AGENDAMENTO|PRODUTOS-->
+    <!--CONFIGURA O MENU DA PAGINA////INICIO|PROCEDIMENTO|AGENDAMENTO|PRODUTOS-->
+  <nav class="menu">
+    <ul class="lista_menu">
+      <li class="item-menu">
+        <a href="meusite.html">Início</a>  <!--TITULO DA PRIMEIRA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="#sobre-nos">Sobre Nós</a>  <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (INICIO)-->
+          <a href="#estabelecimentoo">Nosso Estabelecimento</a>
+          <a href="#procedimentoo">Procedimentos</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="procedimento.html">Procedimentos</a> <!--TITULO DA SEGUNDA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="procedimentoFaciais.html">Facial</a> <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PROCEDIMENTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          <a href="procedimentoCorporais.html">Corporal</a>
+          <a href="procedimentoLaser.html">Laser</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="produtos.html">Produtos</a><!--TITULO DA TERCEIRA OPÇÃO MENU-->
+        <div class="submenu">
+          <a href="produtosCorporais.html">Corporal</a> <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PRODUTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          <a href="produtosFacial.html">Facial</a> 
+          <a href="produtosPromoção.html">Promoção</a>
+        </div>
+      </li>
+      <li class="item-menu">
+        <a href="agendamento.html">Agendamento</a>  <!--TITULO DA QUARTA OPÇÃO MENU-->
+        <div class="submenu">
+   <!--OPÇÕES QUE FICARAM DISPONIVEIS NO MENU (PRODUTOS) +++ LINK HREF PARA DIRECIONAR A PESSOA PARA A OPÇÃO QUE SELECIONAR--> 
+          
+        </div>
+      </li>
+    </ul>
+  </nav>
+ 
+ <div class="container">
+    <!-- CARD: Nivea -->
+<div class="card">
+  <div class="slider">
+    <img src="img/nivea.png" class="slide active">
+    <img src="img/nivea2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Nivea – Loção Firmadora Q10 + Vitamina C - 400ml</h2>
+  <p class="texto_Card">Hidrata profundamente e melhora a firmeza da pele com Q10 e Vitamina C.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 39,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Nivea – Loção Firmadora Q10 + Vitamina C')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: Neutrogena -->
+<div class="card">
+  <div class="slider">
+    <img src="img/neutrogena.png" class="slide active">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Neutrogena – Body Care Intensive - 400ml</h2>
+  <p class="texto_Card">Hidratante corporal de rápida absorção para peles secas e ressecadas.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 42,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Neutrogena – Body Care Intensive')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: CeraVe -->
+<div class="card">
+  <div class="slider">
+    <img src="img/cerave.png" class="slide active">
+    <img src="img/cerave2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">CeraVe – Loção Hidratante com Ceramidas - 473ml</h2>
+  <p class="texto_Card">Repara a barreira da pele com ceramidas e ácido hialurônico.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 79,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('CeraVe – Loção Hidratante')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: Bepantol -->
+<div class="card">
+  <div class="slider">
+    <img src="img/bepantol.png" class="slide active">
+    <img src="img/bepantol2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Bepantol Derma – Loção Corporal - 200ml</h2>
+  <p class="texto_Card">Alta hidratação com pró-vitamina B5, ideal para peles ressecadas.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 62,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Bepantol Derma – Loção Corporal')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: La Roche-Posay -->
+<div class="card">
+  <div class="slider">
+    <img src="img/lipikar.png" class="slide active">
+    <img src="img/lipikar2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">La Roche-Posay – Lipikar Baume AP+M - 400ml</h2>
+  <p class="texto_Card">Hidratante calmante para peles extremamente secas e sensíveis.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 116,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('La Roche-Posay – Lipikar Baume')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: Vichy -->
+<div class="card">
+  <div class="slider">
+    <img src="img/vichy.png" class="slide active">
+    <img src="img/vichy2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Vichy – Ideal Body Serum-Milk - 200ml</h2>
+  <p class="texto_Card">Loção com ácido hialurônico e LHA, hidrata e uniformiza o tom da pele.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 99,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Vichy – Ideal Body Serum-Milk')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: Aveeno -->
+<div class="card">
+  <div class="slider">
+    <img src="img/aveeno.png" class="slide active">
+    <img src="img/aveeno2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Aveeno – Daily Moisturizing Lotion - 354ml</h2>
+  <p class="texto_Card">Com aveia coloidal, hidrata e acalma a pele sensível e seca.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 57,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Aveeno – Daily Moisturizing Lotion')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: Eucerin -->
+<div class="card">
+  <div class="slider">
+    <img src="img/eucerin.png" class="slide active">
+    <img src="img/eucerin2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Eucerin – pH5 Loção Hidratante - 400ml</h2>
+  <p class="texto_Card">Protege e fortalece a barreira natural da pele sensível.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 72,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Eucerin – pH5 Loção Hidratante')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: Bioderma -->
+<div class="card">
+  <div class="slider">
+    <img src="img/bioderma.png" class="slide active">
+    <img src="img/bioderma2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Bioderma – Atoderm Crème - 500ml</h2>
+  <p class="texto_Card">Ultra-hidratante para pele muito seca ou atópica, com textura nutritiva.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 76,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Bioderma – Atoderm Crème')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: The Body Shop -->
+<div class="card">
+  <div class="slider">
+    <img src="img/bodyshop.png" class="slide active">
+    <img src="img/bodyshop2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">The Body Shop – Body Butter (Karité) - 200ml</h2>
+  <p class="texto_Card">Manteiga corporal nutritiva, ideal para peles secas e muito secas.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 80,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('The Body Shop – Body Butter')">Adicionar à sacola</button>
+</div>
+<!-- CARD: Natura Ekos -->
+<div class="card">
+  <div class="slider">
+    <img src="img/ekos.png" class="slide active">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Natura Ekos – Esfoliante Corporal de Castanha - 200g</h2>
+  <p class="texto_Card">Esfoliante natural que remove células mortas e hidrata com óleo de castanha.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 61,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Natura Ekos – Esfoliante Corporal de Castanha')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: Bio-Oil -->
+<div class="card">
+  <div class="slider">
+    <img src="img/biooil.png" class="slide active">
+    <img src="img/biooil2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Bio-Oil – Óleo Corporal para Estrias e Cicatrizes - 125ml</h2>
+  <p class="texto_Card">Melhora a aparência de estrias, cicatrizes e tons desiguais da pele.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 63,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Bio-Oil – Óleo Corporal para Estrias e Cicatrizes')">Adicionar à sacola</button>
+</div>
+<!-- CARD: The Body Shop – Esfoliante de Moringa / Karité -->
+<div class="card">
+  <div class="slider">
+    <img src="img/moringa.png" class="slide active">
+    <img src="img/karite.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">The Body Shop – Esfoliante de Moringa / Karité - 250ml</h2>
+  <p class="texto_Card">Esfoliação suave com fragrância floral (Moringa) ou nutritiva (Karité).</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 98,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('The Body Shop – Esfoliante de Moringa / Karité')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: Dove – Sabonete Líquido Deeply Nourishing -->
+<div class="card">
+  <div class="slider">
+    <img src="img/dove1.png" class="slide active">
+    <img src="img/dove2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Dove – Sabonete Líquido Deeply Nourishing - 250ml</h2>
+  <p class="texto_Card">Limpeza suave e hidratação profunda com tecnologia NutriumMoisture™.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 21,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Dove – Sabonete Líquido Deeply Nourishing')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: Granado – Sabonetes Glicerinados Terrapeutics -->
+<div class="card">
+  <div class="slider">
+    <img src="img/granado_glicerina1.png" class="slide active">
+    <img src="img/granado_glicerina2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Granado – Sabonetes Glicerinados Terrapeutics - Kit c/ 4 unid.</h2>
+  <p class="texto_Card">Base vegetal, fórmula suave, fragrâncias naturais como castanha, lavanda e calêndula.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 38,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Granado – Sabonetes Glicerinados Terrapeutics')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: L'Occitane en Provence – Sabonete Líquido de Amêndoas -->
+<div class="card">
+  <div class="slider">
+    <img src="img/loccitane_amendoas1.png" class="slide active">
+    <img src="img/loccitane_amendoas2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">L'Occitane – Sabonete Líquido de Amêndoas - 250ml</h2>
+  <p class="texto_Card">Textura aveludada, limpa suavemente e deixa a pele delicadamente perfumada.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 124,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('L\'Occitane – Sabonete Líquido de Amêndoas')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: Natura Tododia – Sabonete Esfoliante ou Cremoso -->
+<div class="card">
+  <div class="slider">
+    <img src="img/tododia1.png" class="slide active">
+    <img src="img/tododia2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Natura Tododia – Sabonete Esfoliante ou Cremoso - Kit 5 unid.</h2>
+  <p class="texto_Card">Limpeza suave e fragrância deliciosa com opções cremosas ou esfoliantes.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 35,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Natura Tododia – Sabonete Esfoliante ou Cremoso')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: Palmolive – Naturals Óleo Nutritivo -->
+<div class="card">
+  <div class="slider">
+    <img src="img/palmolive1.png" class="slide active">
+    <img src="img/palmolive2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Palmolive – Naturals Óleo Nutritivo - 250ml</h2>
+  <p class="texto_Card">Combinação de óleos hidratantes e ingredientes naturais para pele macia.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 16,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Palmolive – Naturals Óleo Nutritivo')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: O Boticário Cuide-se Bem – Sabonete Líquido Rosa & Algodão -->
+<div class="card">
+  <div class="slider">
+    <img src="img/boticario_rosa1.png" class="slide active">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">O Boticário – Cuide-se Bem Rosa & Algodão - 200ml</h2>
+  <p class="texto_Card">Sabonete líquido com espuma cremosa e aroma floral suave.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 29,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('O Boticário – Cuide-se Bem Rosa & Algodão')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: Johnson’s – Vita-Rich Rosas ou Romã -->
+<div class="card">
+  <div class="slider">
+    <img src="img/johnsons1.png" class="slide active">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Johnson’s – Vita-Rich Rosas ou Romã - 250ml</h2>
+  <p class="texto_Card">Fórmula suave com fragrância floral ou frutada, para pele macia e perfumada.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 19,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Johnson’s – Vita-Rich Rosas ou Romã')">Adicionar à sacola</button>
+</div>
+
+<!-- CARD: Simple Organic – Sabonete em barra vegano -->
+<div class="card">
+  <div class="slider">
+    <img src="img/simplebarra1.png" class="slide active">
+    <img src="img/simplebarra2.png" class="slide">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+  <h2 class="titulo_Card">Simple Organic – Sabonete Vegano em Barra - 90g</h2>
+  <p class="texto_Card">Com ingredientes naturais e sem fragrância sintética. Ideal para peles sensíveis.</p>
+  <div class="preco">
+    <span class="preco-promocional">R$ 33,90</span>
+  </div>
+  <button class="botao-sacola" onclick="adicionarProduto('Simple Organic – Sabonete em barra vegano')">Adicionar à sacola</button>
+</div>
+
+
+    
+</div>
+    
+   
+    <script>
+    // Para cada slider na página (caso tenha vários produtos)
+    document.querySelectorAll('.slider').forEach(slider => {
+      const slides = slider.querySelectorAll('.slide'); // pega todas as imagens
+      let index = 0; // índice da imagem atual
+    
+      // Função que exibe a imagem com índice "i" e esconde as outras
+      const showSlide = (i) => {
+        slides.forEach((slide, j) => {
+          slide.classList.toggle('active', j === i); // ativa só a imagem atual
+        });
+      };
+    
+      // Quando clicar no botão "next" (seta para direita)
+      slider.querySelector('.next').addEventListener('click', () => {
+        index = (index + 1) % slides.length; // avança circularmente
+        showSlide(index); // mostra a nova imagem
+      });
+    
+      // Quando clicar no botão "prev" (seta para esquerda)
+      slider.querySelector('.prev').addEventListener('click', () => {
+        index = (index - 1 + slides.length) % slides.length; // volta circularmente
+        showSlide(index); // mostra a nova imagem
+      });
+    });
+    </script>
+  <script>
+    // Função para abrir o pop-up com a imagem e descrição
+    function abrirPopup(img) {
+      const popup = document.getElementById('popup');
+      const popupImg = document.getElementById('popup-img');
+      const popupDesc = document.getElementById('popup-desc');
+      
+      // Configura a imagem do pop-up
+      popupImg.src = img.src;
+      
+      // Pega a descrição da imagem, definida no atributo data-desc
+      const descricao = img.getAttribute('data-desc');
+      popupDesc.innerHTML = descricao;
+      
+      // Exibe o pop-up
+      popup.style.display = 'block';
+    }
+
+    // Função para fechar o pop-up
+    function fecharPopup() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'none';
+    }
+  </script>
+
+<script defer>
+    function atualizarContadorSacola() { //ATUALIZA O CONTADOR DE ITENS DA SACOLA
+
+      const carrinho = JSON.parse(localStorage.getItem('sacola')) || []; //RECUPERA OS ITENS DA SACOLA DO localStorage OU CRIA UM array VAZIO SE NÃO TIVER NADA
+      
+      const contador = document.getElementById('contador-sacola'); //SELECIONA O ELEMENTO HTML COM O ID "contador-sacola"
+      
+      contador.textContent = carrinho.length; //DEFINE O NÚMERO DE ITENS DA SACOLA COMO TEXTO DO CONTADOR
+  
+      contador.style.display = carrinho.length > 0 ? 'inline-block' : 'none'; //MOSTRA OU OCULTA O CONTADOR| DEPENDENDO SE TEM PRODUTOS ADICIONADOS OU NÃO
+    }
+  
+    function adicionarProduto(nome) { //FUNÇÃO PARA ADICIONAR UM PRODUTO À SACOLA
+
+      let carrinho = JSON.parse(localStorage.getItem('sacola')) || []; //RECUPERA A SACOLA DO localStorage OU INICIALIZA UM array VAZIO
+  
+      carrinho.push(nome);//ADICIONA O NOME DO PRODUTO AO array
+  
+      localStorage.setItem('sacola', JSON.stringify(carrinho));//SALVA NOVAMENTE O array ATUALIZADO NO localStorage
+  
+      atualizarContadorSacola();//ATUALIZA O CONTADOR VISUAL DA SACOLA
+    }
+  
+
+    function abrirSacola() { //FUNÇÃO PARA REDIRECIONAR PARA A PAGINA DE PAGAMENTO
+      window.location.href = "pagamento.html";
+    }
+  
+    function abrirCadastro() { //FUNÇÃO PARA REDIRECIONAR PARA A PAGINA DE CADASTRO
+      window.location.href = "cadastro.html";
+    }
+  
+    document.addEventListener("DOMContentLoaded", atualizarContadorSacola); //QUANDO O DOM CARREGA POR COMPLETO, O CONTADOR DA SACOLA ATUALIZA
+  </script>
+  <!--ENCERRA O SCRIPT--><footer class="footer">
+    <p>&copy; 2025 SPA Regina Vidal. Todos os direitos reservados.</p>
+  </footer>
+</head>
+<body>

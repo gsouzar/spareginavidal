@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamento via Google Pay</title>
+  <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f5f5f5;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+.card {
+  background: #ffffff;
+  color: #202124;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+}
+
+.google-logo {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.google-logo img {
+  width: 45%;
+}
+
+.total {
+  font-size: 20px;
+  margin: 20px 0;
+  font-weight: 500;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4285F4;
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+.btn {
+      background-color: #47fa50;
+      color: rgb(0, 0, 0);
+      padding: 14px 26px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin-top: 10px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+
+
+.loader,
+.success {
+  margin-top: 30px;
+  display: none;
+}
+
+.loader .spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #ff1100;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 10px;
+}
+
+.success {
+  color: #0f9d58;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  color: #d93025;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="google-logo">
+    <img src="IMG/googleIcone.png"  alt="Google Pay Logo"><p>Pay</p>
+  </div>
+  <div class="total" id="valorTotal">Total: R$ 0,00</div>
+
+  <form id="formulario" onsubmit="event.preventDefault(); processarPagamento();">
+    <input type="email" id="email" placeholder="E-mail do Google Pay" required>
+    <input type="password" id="senha" placeholder="Senha" required>
+    <button class="btn" type="submit">Pagar com Google Pay</button>
+    <div class="error" id="erro"></div>
+  </form>
+
+  <div class="loader" id="loader">
+    <div class="spinner"></div>
+    <p>Processando pagamento...</p>
+  </div>
+
+  <div class="success" id="success">
+    Compra realizada com sucesso!
+  </div>
+</div>
+<script>
+  // Função para obter o valor "total" da URL e atualizar a tela
+  function mostrarValorTotal() {
+    const params = new URLSearchParams(window.location.search);
+    const total = params.get("total");
+    const exibicao = document.getElementById("valorTotal");
+
+    if (total) {
+      exibicao.textContent = `Total: R$ ${parseFloat(total).toFixed(2).replace('.', ',')}`;
+    } else {
+      exibicao.textContent = "Total: R$ 0,00";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", mostrarValorTotal);
+</script>
+<script>
+  function processarPagamento() {
+    const email = document.getElementById("email").value.trim();
+    const senha = document.getElementById("senha").value.trim();
+    const erro = document.getElementById("erro");
+
+    if (email === "" || senha === "") {
+      erro.textContent = "Por favor, preencha todos os campos.";
+      return;
+    }
+
+    // Oculta o formulário e mostra o loader
+    document.getElementById("formulario").style.display = "none";
+    document.getElementById("loader").style.display = "block";
+
+    // Simula processamento
+    setTimeout(() => {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("success").style.display = "block";
+    }, 3000);
+  }
+</script>
+
+
+</body>
+</html>
