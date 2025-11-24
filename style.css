@@ -164,7 +164,7 @@ body {
 .nomeEmpresa {
   color: #f5f5dc;
   font-size: 40px;
-  margin-top: -140px;
+  margin-top: -230px;
   font-family:'Raleway';
   display: flex;
   padding-left: 39%;
@@ -206,12 +206,10 @@ body {
 
 
 
-
-/* CONFIGURAÇÃO DA LOGO */
 .logo {
   width: 30%;
   padding-right: 200px;
-  margin-top: -20px;
+  margin-top: -100px;
 }
 
 
